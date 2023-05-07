@@ -1,0 +1,70 @@
+The Ultimate Authentication Course with NodeJS and React
+ - Antonio Papa
+16/05/2023
+ 16. Sending Emails
+ 15. Forgot Password
+ 14. Logout
+ 13. Refreshing the Token
+ 12. Authenticated User
+ 11. Cors
+ 10. Jwt
+     PS D:node-auth> npm i -D @types/jsonwebtoken
+     PS D:node-auth> npm i jsonwebtoken
+
+15/05/2023
+  9. Login
+  8. Register
+     PS D:node-auth> 
+     ## Modified ormconfig, "entities": ["src/entity/*.js"], to "src/entity/*.{js,ts}"
+     ## in order to solve 'No metadata for "User" was found.'
+     ## Worked with Node v16.16.0 (npm 8.16.0) at home
+     PS D:node-auth> npm i -D ts-node
+     # TypeError [ERR_UNKNOWN_FILE_EXTENSION]: Unknown file extension ".ts"
+     PS D:node-auth> npm i -D @types/bcryptjs
+     PS D:node-auth> npm i bcryptjs
+     PS D:node-auth> node -v # v20.1.0
+     PS D:node-auth> winget upgrade -q NodeJS
+     PS D:node-auth> Unsupported platform for n@9.1.0: wanted {"os":"!win32"} (current:{"os":"win32"})
+     PS D:node-auth> npm i -g n
+     PS D:node-auth> npm cache clean -f
+     PS D:node-auth> npm i -g npm
+     # Unsupported engine {required:{node: '>=16.14'}, current:{node: 'v16.13.1', npm: '8.18.0'}}
+     PS D:node-auth> npm i bcryptjs
+     # Add routes with post("/api/register") and auth controller with a Register function
+
+12/05/2023
+  7. Entities
+     # Uncomment "experimentalDecorators": true, "emitDecoratorMetadata": true,
+     # to enable the use of decorators in entities
+     # Create a User entity
+  6. TypeORM
+     # Create ormconfig.json, copy from github.com/typeorm/typescript-express-example
+     # and modify (add "logging": false)
+     PS D:node-auth> npm i mysql2
+     PS D:node-auth> npm i -D @types/node
+     PS D:node-auth> npm i reflect-metadata
+     PS D:node-auth> npm i typeorm
+  5. MySQL
+     # Create a new Schema named "node_auth"
+     # Open MySQL Workbench (root/Pass@123)
+
+11/05/2023
+  4. Express
+     # Modify package.json: (1) Add "type": "module", and
+     # (2) change node to ts-node-esm in "start" script
+     PS D:node-auth> npm i -g ts-node
+     PS D:node-auth> npm i -D @types/express
+     PS D:node-auth> npm i express
+  3. Typescript
+     # Modify package.json "start" script to "node src/index.ts"
+     PS D:node-auth> tsc --init
+     PS D:node-auth> npm i -D typescript
+     PS D:node-auth> npm i -g typescript
+     # Rename src/index.js to index.ts
+  2. Setup
+     # Rename "scripts": "test" to "start" and modify to "node src/index.js"
+     PS D:node-auth> npm init
+Section 2: Node
+
+  1. Introduction
+Section 1: Introduction

@@ -3,7 +3,6 @@ require("dotenv").config(); //console.log("DB_USER:", process.env.DB_USER);
 //import mongoose from "mongoose";
 const mongoose = require("mongoose"), Company = require("./models/company");
 
-//const databaseUrl = "mongodb+srv://rscommsbd:PzV3iXgpA8GTvqAU@cluster0.big5sch.mongodb.net/rscomms?retryWrites=true&w=majority";
 const databaseUrl = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}` +
   `@${process.env.DB_CLUSTER}.mongodb.net/${process.env.DB_COLLECTION}?retryWrites=true&w=majority`;
 mongoose.connect(databaseUrl, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -12,19 +11,26 @@ mongoose.connect(databaseUrl, { useNewUrlParser: true, useUnifiedTopology: true 
   //.finally(() => process.exit());
 
 const name = "Justified Company Limited", query = {name: name};
+const today = new Date(); console.log("Mongoose:: today:", today);
 
 Company.find(query)
 .then(companies => {
   console.log("Found Companies:", companies);
-  companies.forEach(company => { console.log("Deleting company:: _id:", company._id);
-    //company.remove();
-    Company.findByIdAndDelete(company)
-    .then(company => console.log("Deletion successfull:", company))
+  companies.forEach(company => {
+    Company.findById(company._id)
+    .then(company => { console.log("Editing company:", company);
+      company.mtEnd = today.toString(); company.save();
+      console.log("Successfully updated:", company);
+    })
     .catch(err => console.log(err));
+    
+    // console.log("Deleting company:: _id:", company._id); //company.remove();
+    // Company.findByIdAndDelete(company)
+    // .then(company => console.log("Deletion successfull:", company))
+    // .catch(err => console.log(err));
   });
   //-------------------------------------------------------------------------------------------------------//
   const defaultAddress = "23/D/1, Box Culvert Road, Free School Street, Panthapath, Dhaka-1205, Bangladesh.";
-  const today = new Date(); console.log("Mongoose:: today:", today);
   const company = {
     name: name, yrendDate:
     `6/30/${today.getMonth()<6?today.getFullYear()-1:today.getFullYear()}`,
@@ -44,11 +50,11 @@ Company.find(query)
     efficiency: "50",
   }; //console.log("company:", company);
   
-  Company.create(company)
-  .then(company => {
-    console.log("NEW COMPANY:", company);
-  })
-  .catch(err => console.log(err));
+  // Company.create(company)
+  // .then(company => {
+  //   console.log("NEW COMPANY:", company);
+  // })
+  // .catch(err => console.log(err));
   //-------------------------------------------------------------------------------------------------------//
 })
 .catch(err => console.log(err));
