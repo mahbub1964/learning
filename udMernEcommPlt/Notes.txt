@@ -1,0 +1,71 @@
+MERN From Scratch 2023 | eCommerce Platform
+ - Brad Traversy
+17/06/2023
+ 12. 
+Section 3: Serving & Fetching Data
+
+ 11. Product Details Page
+
+ 10. Rating Component
+     # 
+  9. Implement React Router
+     PS D:frontend> npm i react-router-bootstrap
+     PS D:frontend> npm i react-router-dom
+16/06/2023
+  8. List Products
+     # Now create a separate Product component, using Card from react-bootstrap
+     # Import the HomeScreen in App.js, and put it in place the Welcome Heading
+     # Make the page responsive through the props <Col sm={12} md={6} lg={4} xl={3}>
+     # type rafce (for the bolierplate code), map through all the product.name in a Col tag within a Row
+     # Add a screens folder in src and create a file HomeScreen.jsx inside the folder
+     # Copy the images folder from the unzipped source code and paste it into the public folder
+     # Create a file named products.js and paste the dummy products copied from QA (from a response)
+  7. Custom Bootstrap Theme
+     # Also remark the regular bootstrap.min.css line and import './assets/styles/bootstrap.custom.css';
+     # Delete the default index.css and in index.js import './assets/styles/index.css';
+     # Copy the assets folder from Github (https://github.com/bradtraversy/proshop-v2) frontend/src
+  6. Header & Footer Components
+     # Import the Footer in App.js, and put it below the main tag
+     # Wrap it inside a footer tag and put in it a copyright symbol (&copy;)
+     # In the components folder, add a new file Footer.jsx, and type rafce (for boilerplate code)
+     # In App.js, import Header from "./components/Header"; and put it before the main tag
+     # and import { FaShoppingCart, FaUser } from 'react-icons/fa';
+     # In Header.jsx, import { Navbar, Nav, Container } from 'react-bootstrap';
+     # Add a components folder in src and create a file Header.jsx inside the folder
+     # Add Bootstrap in index.js (import 'bootstrap/dist/css/bootstrap.min.css';)
+     PS D:frontend> npm i react-bootstrap bootstrap react-icons
+     # Setup React bootstrap
+  5. React Setup & Git Initialize
+     PS D:proshop-v2> git push -u origin main
+     PS D:proshop-v2> git branch -M main
+     PS D:proshop-v2> git remote add origin git@github.com:mahbub1964/learning.git
+     PS D:frontend> cd ..
+     # Create a Git repository on github and add this as a remote repository in our project root
+     # Then run git init to initialize a git repository in the project root, and perform initial commit
+     # Also add a just .env line in the .gitignore file
+     # In .gitignore, remove the starting "/" from /node_modules, so that all the node_modules are ignored
+     PS D:frontend> mv .gitignore ..
+     # Setup Git: Move the .gitignore to the project root
+15/06/2023
+     # Cleanup: remove logo.svg, App.test and App.css from src folder, clear everything in App.js and
+     # type rafce for the boilerplate code. Then open index.html in the public folder and change the title
+     PS D:frontend> npm start
+     PS D:proshop-v2> cd frontend
+     PS D:proshop-v2> npx create-react-app frontend
+     # Will have three folders in proshop: frontend, backend and uploads
+     PS D:udMernEcommPlt> cd proshop-v2
+     PS D:udMernEcommPlt> mkdir proshop-v2
+     # Other options: Vite - https://vitejs.dev/
+     # Will use Create React App: https://create-react-app.dev/
+Section 2: Starting The Front End
+
+  4. Getting Setup
+     # VS Code Extensions: "ES7+React/Redux/React-Native snippets", "Prettier - Code formatter",
+       "Javascript (ES6) code snippets", "GitHub Copilot" and "GitHub Theme" (GitHub Dark)
+     # Will use "React Developer Tools" and "Redux DevTools" in Chrome or FireFox
+     # Create a new Postman Collection named "Udemy MERN Udemy Platform"
+  3. Course Code Repo
+     # GitHub Link: https://github.com/bradtraversy/proshop-v2
+  2. Course Project Intro
+  1. Wecome To The Course
+Section 1: Introduction
