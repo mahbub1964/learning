@@ -14,7 +14,14 @@ The Ultimate Authentication Course with NodeJS and React
 15/05/2023
   9. Login
   8. Register
-     PS D:node-auth> 
+     ## Postman Error: conn ECONNREFUSED 127.0.0.1:8000
+     ## Replaced 127.0.0.1 with localhost to fix the error
+     PS D:node-auth> node -v # v18.16.0
+     PS D:node-auth> nvm list
+     PS D:node-auth> nvm use 18.16.0
+     PS D:node-auth> nvm install 18.16.0
+     PS D:node-auth> nvm list available (to see all the available node versions)
+     PS D:node-auth> Download nvm-setup.zip and run the extracted nvm-setup.exe
      ## Modified ormconfig, "entities": ["src/entity/*.js"], to "src/entity/*.{js,ts}"
      ## in order to solve 'No metadata for "User" was found.'
      ## Worked with Node v16.16.0 (npm 8.16.0) at home
