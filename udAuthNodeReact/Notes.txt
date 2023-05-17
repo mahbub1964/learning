@@ -1,12 +1,75 @@
 The Ultimate Authentication Course with NodeJS and React
  - Antonio Papa
-16/05/2023
+21/05/2023
+ 23. Authenticated User
+ 22. Login
+ 21. Register
+ 20. Routes
+     PS D:react-auth> 
+ 19. Components
+     # Copy Login.tsx to Register.tsx, change labels, add First/Last Names and Password Confirm
+     # Create "components" folder in src, a file "Login.tsx" and move codes from App.tsx
+ 18. Setup
+     # Also copy the contents of signin.css, paste in App.css and remove the body and html parts
+     # Then replace all class with className, for with htmlFor and remove image and copyright lines
+     # Go to Examples, select Sign-in, view page-source, copy the main tag and replace div in App.tsx
+     # Copy the css link from getbootstrap.com and paste in public/index.html before title
+     # Remove App.text.tsx and logo.svg from the src folder
+     PS D:react-auth> npm start
+     PS D:udAuthNodeReact> cd react-auth
+     PS D:udAuthNodeReact> npx create-react-app react-auth --template typescript
+Section 3: React
+
+19/05/2023
+     # Once the authorization code is generated, click "Exchange authorization code for tokens"
+     # Then click "Authorize APIs" button, select rscommsbd@gmail.com and continue.
+     # In the left side, select "Gmail API v1": "https://mail.google.com/"
+     # Check the box "Use your own OAuth credentials" and provide Client ID and secret
+     # Click the Gear button (OAuth 2.0 Configuration"
+     # Visit OAuth2 Playground: https://developers.google.com/oauthplayground
+     # Add "Authorized redirect URIs" as "https://developers.google.com/oauthplayground"
+     # Provide "Web application" as the "Application type" and Name as "OAuth2 Playground"
+     # Click on "+Create Credentials" and choose "OAuth client ID"
+     # Select "Credentials" in "APIs & Services" section
+     # Add rscommsbd@gmail.com as a "Test user".
+     # Upload RS.png as the App logo. Skip the "scopes" phase by clicking "Save and Continue"
+     # Configure "App information":: App name: "RS Comms Web App" and email: rscommsbd@gmail.com
+     # Configure "User Type" as "External" and click the "Create" button
+     # Select "OAuth consent screen" in "APIs & Services" section
+     # Select "Settings" and change the project name to "RS Comms Web App"
+     # Use the hamburger menu in the top left to switch to the "IAM & Admin" section
+ ##  Create a GCP account with rscommsbd@gmail.com
+
+     PS D:auth-mongoose> npm i nodemailer
+     PS D:auth-mongoose> npm i cookie-parser
+     PS D:auth-mongoose> npm i jsonwebtoken
+     PS D:auth-mongoose> npm i bcryptjs
+     PS D:auth-mongoose> npm i mongoose
+     PS D:auth-mongoose> npm i dotenv
+     PS D:auth-mongoose> npm i body-parser
+     PS D:auth-mongoose> npm i express
+     PS D:auth-mongoose> npm init
+ ##  Start build a new project named auth_mongoose similar to node_auth
+
+18/05/2023
+ 17. Reset Password
  16. Sending Emails
+     PS D:node-auth> npm i -D @types/nodemailer
+     PS D:node-auth> npm i nodemailer
  15. Forgot Password
  14. Logout
+
+17/05/2023
  13. Refreshing the Token
  12. Authenticated User
+     PS D:node-auth> npm i -D @types/cookie-parser
+     PS D:node-auth> npm i cookie-parser
  11. Cors
+     PS D:node-auth> npm i dotenv
+     PS D:node-auth> npm i -D @types/cors
+     PS D:node-auth> npm i cors
+
+16/05/2023
  10. Jwt
      PS D:node-auth> npm i -D @types/jsonwebtoken
      PS D:node-auth> npm i jsonwebtoken
