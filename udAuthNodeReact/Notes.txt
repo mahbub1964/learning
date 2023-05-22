@@ -4,8 +4,11 @@ The Ultimate Authentication Course with NodeJS and React
  23. Authenticated User
  22. Login
  21. Register
+     PS D:react-auth> npm i -D @types/axios
+     PS D:react-auth> npm i axios
  20. Routes
-     PS D:react-auth> 
+     PS D:react-auth> npm i -D @types/react-router-dom
+     PS D:react-auth> npm i react-router-dom
  19. Components
      # Copy Login.tsx to Register.tsx, change labels, add First/Last Names and Password Confirm
      # Create "components" folder in src, a file "Login.tsx" and move codes from App.tsx
