@@ -1,6 +1,22 @@
 The Ultimate Authentication Course with NodeJS and React
  - Antonio Papa
-21/05/2023
+23/05/2023
+ 34. Displaying the QR Code
+ 33. Authenticator Form
+ 32. Expanding the Login Form
+ 31. Scanning and Sending the Authenticator Code
+ 30. Two Factor Authentication
+Section 4: Two Factor Authentication
+
+ 29. Reset Password
+ 28. Forgot Password
+ 27. Using Redux
+ 26. Redux Toolkit
+     PS D:react-auth> 
+
+22/05/2023
+ 25. Logout
+ 24. Interceptors
  23. Authenticated User
  22. Login
  21. Register
@@ -9,6 +25,8 @@ The Ultimate Authentication Course with NodeJS and React
  20. Routes
      PS D:react-auth> npm i -D @types/react-router-dom
      PS D:react-auth> npm i react-router-dom
+
+21/05/2023
  19. Components
      # Copy Login.tsx to Register.tsx, change labels, add First/Last Names and Password Confirm
      # Create "components" folder in src, a file "Login.tsx" and move codes from App.tsx
