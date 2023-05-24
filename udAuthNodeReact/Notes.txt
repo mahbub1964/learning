@@ -1,6 +1,6 @@
 The Ultimate Authentication Course with NodeJS and React
  - Antonio Papa
-23/05/2023
+25/05/2023
  34. Displaying the QR Code
  33. Authenticator Form
  32. Expanding the Login Form
@@ -10,9 +10,31 @@ Section 4: Two Factor Authentication
 
  29. Reset Password
  28. Forgot Password
+
+25/05/2023
+     PS D:react-js> 
+     PS D:react-js> 
+     PS D:react-js> 
+     PS D:react-js> npm i react-router-dom
+     # Copy SignIn.jsx to Login.jsx and remove unnecessary lines
+     # Select Sign In, go to Source Code, open SignIn.js and copy contents to src/components/SignIn.jsx
+     # Go to https://mui.com/material-ui/getting-started/templates/ (9+ Free React Templates)
+     PS D:react-js> npm i @mui/icons-material
+     PS D:react-js> npm i @mui/material @emotion/react @emotion/styled
+     PS D:react-js> npm uninstall @testing-library/user-event
+     PS D:react-js> npm uninstall @testing-library/react web-vitals
+     PS D:react-js> npm uninstall @testing-library/jest-dom
+24/05/2023
+     PS D:react-js> npm start
+     PS D:auth-mongoose> cd react-js
+     PS D:auth-mongoose> npx create-react-app react-js
+ ##  Create a React App within the auth-mongoose folder
+
  27. Using Redux
  26. Redux Toolkit
-     PS D:react-auth> 
+     PS D:react-auth> npm i -D @types/react-redux
+     PS D:react-auth> npm i react-redux
+     PS D:react-auth> npm i @reduxjs/toolkit
 
 22/05/2023
  25. Logout
