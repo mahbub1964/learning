@@ -25,7 +25,7 @@ export const Login = async (req: Request, res: Response) => {
   });
   if(!user) {
     return res.status(400).send({ message: "Invalid credentials" });
-  }
+  } //console.log("req.body:", req.body);
   if(!await bcryptjs.compare(req.body.password, user.password)){
     return res.status(400).send({ message: "Invalid credentials" });
   }
@@ -42,12 +42,12 @@ export const Login = async (req: Request, res: Response) => {
 }
 
 export const AuthenticatedUser = async (req: Request, res: Response) => {
-  try {
-    const cookie = req.cookies["access_token"];
+  try { //console.log("AuthenticatedUser:");
+    const cookie = req.cookies["access_token"]; //console.log("User:: cookie:", cookie);
     const payLoad: any = jwt.verify(cookie, process.env.ACCESS_SECRET||"");
     if(!payLoad) {
       return res.status(401).send({ message: "unauthenticated" });
-    }
+    } //console.log("User:: payload:", payLoad);
     const user = await getRepository(User).findOne({
       select: ["id", "first_name", "last_name", "email", "password"], //
       where: {id: payLoad.id}
@@ -64,7 +64,7 @@ export const AuthenticatedUser = async (req: Request, res: Response) => {
 
 export const Refresh = async (req: Request, res: Response) => {
   try {
-    const cookie = req.cookies["refresh_token"];
+    const cookie = req.cookies["refresh_token"]; console.log("Refresh:: cookie:", cookie);
     const payLoad: any = jwt.verify(cookie, process.env.REFRESH_SECRET||"");
     if(!payLoad) {
       return res.status(401).send({ message: "unauthenticated" });
@@ -79,8 +79,15 @@ export const Refresh = async (req: Request, res: Response) => {
   }
 }
 
-export const Logout = (req: Request, res: Response) => {
-  res.cookie("access_token", "", { maxAge: 0 });
-  res.cookie("refresh_token", "", { maxAge: 0 });
-  res.send({ message: "success" });
+export const Logout = async (req: Request, res: Response) => {
+  try {
+    //const cookie = req.cookies["refresh_token"]; console.log("Logout:: cookie:", cookie);
+    res.cookie("access_token", "", { maxAge: 0 });
+    res.cookie("refresh_token", "", { maxAge: 0 });
+    console.log("Logout: Cookies Reset for removal");
+    res.send({ message: "success" });
+  } catch(e) {
+    console.log("Logout: Could not Refresh cookies!");
+    res.send({ message: "failure" });
+  }
 }

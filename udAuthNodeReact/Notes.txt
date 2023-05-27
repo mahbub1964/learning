@@ -14,8 +14,11 @@ Section 4: Two Factor Authentication
 25/05/2023
      PS D:react-js> 
      PS D:react-js> 
-     PS D:react-js> 
+     # Import "store" in index.js, wrap "App" within "Provider" with a store prop
+     # Create "redux" folder in src, and files store.js and authSlice.js
+     PS D:react-js> npm i @reduxjs/toolkit react-redux
      PS D:react-js> npm i react-router-dom
+     # Copy Login.jsx to Register.jsx, change labels, add First/Last Names and Password Confirm
      # Copy SignIn.jsx to Login.jsx and remove unnecessary lines
      # Select Sign In, go to Source Code, open SignIn.js and copy contents to src/components/SignIn.jsx
      # Go to https://mui.com/material-ui/getting-started/templates/ (9+ Free React Templates)
