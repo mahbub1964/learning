@@ -51,6 +51,20 @@ Section 4: Two Factor Authentication
      PS D:react-auth> npm i -D @types/react-router-dom
      PS D:react-auth> npm i react-router-dom
 
+28/05/2023
+     # In the OAuth Client ID, Application type: Web application, 
+     # Then click on "Create Credentials", select "User data", click "Next"
+     # Go to APIs & Services -> Enabled APIs & services, Select "Gmail API" from the list
+     # App name: "RS Comms Production" and email: rscommsbd@gmail.com
+     # Click on "Configure Conscent Screen", User Type "External" then Create
+     # Select APIs & Services -> Credentials, +Create Credentials, OAuth client ID,
+     # Then search for "gmail api", select Gmail API and click on the "Enable" button
+     # Go to APIs & Services -> Enabled APIs & services, +Enable APIs and Services,
+     # Project ID: "rs-comms-production", Location: "No organization", Click on the "Create" button
+     # Click on "New Project" on the upper right of the dialog
+     # Click on the project selection downward arrow button to open "Select a project" dialog form
+ ##  Create a new GCP project "RS Comms Production"
+
 21/05/2023
  19. Components
      # Copy Login.tsx to Register.tsx, change labels, add First/Last Names and Password Confirm
