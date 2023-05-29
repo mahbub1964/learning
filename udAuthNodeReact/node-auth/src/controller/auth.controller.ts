@@ -4,6 +4,7 @@ import bcryptjs from "bcryptjs";
 //import { sign } from "jsonwebtoken";
 import jwt from "jsonwebtoken"; //console.log("jwt:", jwt);
 import { User } from "../entity/user.entity.js";
+import { OAuth2Client } from "google-auth-library";
 
 export const Register = async (req: Request, res: Response) => {
   const body = req.body;
@@ -91,3 +92,37 @@ export const Logout = async (req: Request, res: Response) => {
     res.send({ message: "failure" });
   }
 }
+
+export const GoogleAuth = async (req: Request, res: Response) => {
+  const { token } = req.body;
+  const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID, process.env.GOOGLE_CLIENT_SECRET);
+  const ticket = await client.verifyIdToken({
+    idToken: token, audience: process.env.GOOGLE_CLIENT_ID
+  });
+  const payload = ticket.getPayload();
+  if(!payload) {
+    return res.status(401).send({ message: "unauthenticated" });
+  }
+  const repository = await getRepository(User);
+  // let user = await repository.findOne({
+  //   select: ["id", "first_name", "last_name", "email", "password"], //
+  //   where: {email: payload.email}
+  // });
+  let user = await repository.findOne({ where: {email: payload.email} });
+  if(!user) {
+    user = await repository.save({
+      first_name: payload.given_name,
+      last_name: payload.family_name, email: payload.email,
+      password: await bcryptjs.hash(String(token), 12)
+    });
+  }
+  const accessToken = jwt.sign({ id: user.id }, process.env.ACCESS_SECRET||"" , { expiresIn: "30s" });
+  const refreshToken = jwt.sign({ id: user.id }, process.env.REFRESH_SECRET||"", { expiresIn: "1w" });
+  res.cookie("access_token", accessToken, {
+    httpOnly: true, maxAge: 24 * 60 * 60 * 1000  // 1 day
+  });
+  res.cookie("refresh_token", refreshToken, {
+    httpOnly: true, maxAge: 7 * 24 * 60 * 60 * 1000  // 7 days
+  });
+  res.send({ message: "success" });
+};

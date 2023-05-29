@@ -1,5 +1,6 @@
 import  { SyntheticEvent, useState } from "react";
 import { Navigate } from "react-router-dom";
+import { GoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 
 export const Login = () => {
@@ -35,5 +36,15 @@ export const Login = () => {
 
       <button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
     </form>
+    <GoogleLogin
+      onSuccess={async (res) => { console.log(res);
+        const {status} = await axios.post("google-auth", { token: res.credential });
+        console.log("status:", status);
+        if(status === 200) { console.log("Login Success");
+
+        }
+      }}
+      onError={() => { console.log("Login Failed"); }}
+    />
   </main>;
 };

@@ -1,6 +1,27 @@
 The Ultimate Authentication Course with NodeJS and React
  - Antonio Papa
-25/05/2023
+31/12/2024
+ 38. Using the Access Token in the Headers
+ 37. Revoking Tokens
+Section 6. Authentication using Bearer Tokens
+
+10/09/2024
+ 36. React Google Authentication
+     # 
+     PS D:react-auth> npm install @react-oauth/google
+     # https://livefiredev.com/in-depth-guide-sign-in-with-google-in-a-react-js-application/
+     # Use npm i @react-oauth/google, for in-depth documentation, use:
+     PS D:react-auth> npm install react-google-login (deprecated)
+07/09/2024
+ 35. Node Google Authentication
+     PS D:node-auth> npm install google-auth-library
+     # JavaScript origins: http://localhost:3000, http://localhost:8080, Create
+     # Application type: Web application, Name: udAuthNodeReact, Authorized
+     # Search for: Credentials (APIs and Services), Create Credentials, OAuth Client ID,
+     # Go to cloud.google.com, and click on console (console.cloud.google.com)
+Section 5: Google Authentication
+------------------------------------------------------------------------------------------------------
+
  34. Displaying the QR Code
  33. Authenticator Form
  32. Expanding the Login Form
@@ -50,6 +71,20 @@ Section 4: Two Factor Authentication
  20. Routes
      PS D:react-auth> npm i -D @types/react-router-dom
      PS D:react-auth> npm i react-router-dom
+
+28/05/2023
+     # In the OAuth Client ID, Application type: Web application, 
+     # Then click on "Create Credentials", select "User data", click "Next"
+     # Go to APIs & Services -> Enabled APIs & services, Select "Gmail API" from the list
+     # App name: "RS Comms Production" and email: rscommsbd@gmail.com
+     # Click on "Configure Conscent Screen", User Type "External" then Create
+     # Select APIs & Services -> Credentials, +Create Credentials, OAuth client ID,
+     # Then search for "gmail api", select Gmail API and click on the "Enable" button
+     # Go to APIs & Services -> Enabled APIs & services, +Enable APIs and Services,
+     # Project ID: "rs-comms-production", Location: "No organization", Click on the "Create" button
+     # Click on "New Project" on the upper right of the dialog
+     # Click on the project selection downward arrow button to open "Select a project" dialog form
+ ##  Create a new GCP project "RS Comms Production"
 
 21/05/2023
  19. Components

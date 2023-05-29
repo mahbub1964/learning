@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from "react-redux";
+import { GoogleOAuthProvider } from '@react-oauth/google';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -9,11 +10,14 @@ import { store } from "./redux/store";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
-);
+); //import.meta.env.VITE_GOOGLE_CLIENT_ID
+console.log('GOOGLE_CLIENT_ID:', process.env.REACT_APP_GOOGLE_CLIENT_ID);
 root.render(
   <React.StrictMode>
     <Provider store={store} >
-      <App />
+      <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID as string}>
+        <App />
+      </GoogleOAuthProvider>
     </Provider>
   </React.StrictMode>
 );
