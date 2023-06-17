@@ -1,13 +1,87 @@
 MERN From Scratch 2023 | eCommerce Platform
  - Brad Traversy
+19/06/2023
+ 92. Wrap Up
+ 91. Adding a Custom Domain
+ 90. Add Server IP To MongoDB Atlas
+ 89. Deploy To Render
+ 88. Prepare For Production
+Section 13: Deploy To Production
+Section 12: Reviews, Search & More
+Section 11: Admin Functionality
+Section 10: Checkout Process - Part 2
+Section 9: Checkout Process - Part 1
+Section 8: Frontend Authentication
+Section 7: Backend Authentication
+Section 6: Shopping Cart Functionality
+Section 5: Redux Toolkit Setup & State Management
+
+ 26. Product Controller
+
+ 25. Custom Error Middleware
+     # 
+ 24. Get Products From Database
+     # asyncHandler.js implements the functionality of express-async-handler (https://www.npmjs.com/package/express-async-handler)
+     # Create a folder middleware in backend and a file asyncHandler.js inside
+     # Create a folder routes in the backend and a file productRoutes.js in the folder
+ 23. Getting Started With Postman
+     # Create a Request "Get All Products" as GET {{baseUrl}}/products in the Products folder
+     # Create a variable "baseUrl" and set its value to "http://localhost:5000/api" in Proshop Environment
+     # Create a Collection "Udemy MERN eCommerce Platform" and a folder "Products" underneath
+     # Use the existing Workspace "Udemy Courses" but create a new environment "Proshop Environment" in Postman
+ 22. Seeding Sample Data
+     # Add two more scripts, data:import and data:destroy, to the server package.json
+     # In seeder.js check process.argv, and run destroyData if it is -d, otherwise run the importData
+     # Create a file seeder.js in the backend folder and write two functions importData and destroyData
+     PS D:proshop-v2> npm i colors
+ 21. Prepare Sample Data
+     # export three sample users with hashed password from users.js
+     PS D:proshop-v2> npm i bcryptjs
+     # and create another file users.js for sample users in /backend/data
+     # Remove (comment) the _id fields from the sample data in /backend/data folder
+18/06/2023
+ 20. Modeling Our Data
+     # Also create a userModel and an orderModel in models
+     # Create a folder models in backend and a productModel.js file in models
+ 19. Connect With Mongoose
+     # write a function connectDB in db.js, import and run it in server.js
+     # Create a folder config in backend, and create a file db.js inside config
+     PS D:proshop-v2> npm i mongoose
+     # Documentation is at https://mongoosejs.com/
+ 18. MongoDB Compass Setup
+     # Run MongoDB Compass, provide the Compass Uri and browse the data
+     # Download MongoDB Compass from https://www.mongodb.com/products/compass
+ 17. MongoDB Atlas Setup
+     # Modify the Uri to provide password and a databse name (proshop)
+     # Set your MongoDB connet Uri to MONGO_URI in .env
+Section 4: Starting MongoDB & Mongoose
+
+ 16. Fetch Products
 17/06/2023
- 12. 
+     # Add a line in frontend package.json before "dependencies" - "proxy": "http://localhost:5000"
+     PS D:frontend> npm i axios
+ 15. Environment Variables
+     # Set NODE_ENV="development" and PORT=5000 in the .env file
+     # Create the .env file in the project root
+     PS D:proshop-v2> npm i -D dotenv
+ 14. Nodemon & Concurrently
+     # "dev": "concurrently \"npm run server\" \"npm run client\""
+     # "client": "npm start --prefix frontend", and
+     # Add three scripts in package.json: "server": "nodemon backend/server.js",
+     PS D:proshop-v2> npm i -D nodemon concurrently
+ 13. Express Server & Initial Product Routes
+     PS D:proshop-v2> npm i express
+     # Create a folder named "backend" and create our entry point "server.js" inside it
+     # and replace "test" within "scripts" with: "start: "node backend/server.js"
+     # Modify package.json, add a line after description - "type": "module",
+     PS D:proshop-v2> npm init
+ 12. Full Stack Workflow & Explanation
 Section 3: Serving & Fetching Data
 
  11. Product Details Page
-
  10. Rating Component
-     # 
+     # Import it to the Product component, import Rating from "./Rating";
+     # Create a new file Rating.jsx in components folder, and type rafce
   9. Implement React Router
      PS D:frontend> npm i react-router-bootstrap
      PS D:frontend> npm i react-router-dom
