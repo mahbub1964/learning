@@ -1,6 +1,6 @@
 MERN From Scratch 2023 | eCommerce Platform
  - Brad Traversy
-19/06/2023
+20/06/2023
  92. Wrap Up
  91. Adding a Custom Domain
  90. Add Server IP To MongoDB Atlas
@@ -11,15 +11,49 @@ Section 12: Reviews, Search & More
 Section 11: Admin Functionality
 Section 10: Checkout Process - Part 2
 Section 9: Checkout Process - Part 1
+
+ 51. User Registration
+ 50. User Logout
+ 49. Login Functionality
+ 48. Login Screen
+ 47. Auth & User API Slice
 Section 8: Frontend Authentication
+
+ 46. User Profile Endpoints
+ 45. User Register Endpoint & Encryption
+ 44. Logout User & Clear Cookie
+ 43. Auth Middleware & Endpoint
+ 42. JWT HTTP Only Cookie
+ 41. How Do JSON Web Tokens Work?
+ 40. User Email & Password Validation
+ 39. User Routes & Controller
 Section 7: Backend Authentication
+
+ 38. Remove From Cart
+ 37. Cart Screen
+ 36. Item Count In Header
+ 35. Cart Utils File
+ 34. Qty & Add To Cart Handler
+ 33. Add To Cart Function
+ 32. Cart Slice & Reducer
 Section 6: Shopping Cart Functionality
+
+ 31. Loader & Message Components
+ 30. Get Product Details Endpoint Challenge
+ 29. Products API Slice & Get Products Endpoint
+ 28. Redux Store & API Slice
+ 27. Redux & State Overview
 Section 5: Redux Toolkit Setup & State Management
 
  26. Product Controller
-
+     # Export two functions getProducts & getProductById, import them in productRoutes.js
+     # Create a folder controllers in backend and a file productController.js
  25. Custom Error Middleware
-     # 
+     # In productRoutes.js, throw new Error("Resource not found"), when product is not found
+     # Export two functions notFound, errorHandler and import them in server.js
+     # Create a file errorMiddleware.js in backend/middleware
+     # Express Error Handling documentation: https://expressjs.com/en/guide/error-handling.html
+19/06/2023
  24. Get Products From Database
      # asyncHandler.js implements the functionality of express-async-handler (https://www.npmjs.com/package/express-async-handler)
      # Create a folder middleware in backend and a file asyncHandler.js inside
