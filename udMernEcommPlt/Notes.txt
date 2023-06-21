@@ -1,6 +1,6 @@
 MERN From Scratch 2023 | eCommerce Platform
  - Brad Traversy
-20/06/2023
+08/07/2023
  92. Wrap Up
  91. Adding a Custom Domain
  90. Add Server IP To MongoDB Atlas
@@ -9,40 +9,117 @@ MERN From Scratch 2023 | eCommerce Platform
 Section 13: Deploy To Production
 Section 12: Reviews, Search & More
 Section 11: Admin Functionality
+
+ 60. 
 Section 10: Checkout Process - Part 2
+
+ 59. Creating An Order
+ 58. Order API Slice & Start Order Screen
+ 57. Create & Get Orders
+ 56. Order Routes & Controller
+ 55. Payment Method
+ 54. Checkout Steps Component
+     # 
+ 53. Private Routes
+     # Create a file PrivateRoute.jsx in components
+07/07/2023
+ 52. Shipping Screen
+     # Create a file ShippingScreen.jsx in frontend/src/screens folder
 Section 9: Checkout Process - Part 1
 
+06/07/2023
  51. User Registration
  50. User Logout
  49. Login Functionality
+     # Put the <ToastContainer /> after Footer
+     # In App.js, import {ToastContainer} from "react-toastify"; import "react-toastify/dist/ReactToastify.css";
+     PS D:frontend> npm i react-toastify
  48. Login Screen
+     # Create files FormContainer.jsx and LoginScreen.jsx in components and screens
+05/07/2023
  47. Auth & User API Slice
+     # In usersApiSlice.js, inject login endpoint as builder.mutation to url /api/users/auth
+     # Create files authSlice.js and usersApiSlice.js in frontend/src/slices
 Section 8: Frontend Authentication
 
  46. User Profile Endpoints
  45. User Register Endpoint & Encryption
+     # Create a folder utils in backend and a file generateToken.js
+     # In userModel.js: userSchema.pre("save", this.password=await bcrypt.hash(this.password,salt);
+     # In userController.js: registerUser, user = await User.create({ name, email, password });
  44. Logout User & Clear Cookie
+     # In userController.js: logoutUser, res.cookie("jwt","",{httpOnly:true, expires:new Date(0)});
  43. Auth Middleware & Endpoint
+     # In userRoutes.js, protect the relevant routes and test them in Postman
+     # Decode the token as decoded = jwt.verify(token, process.env.JWT_SECRET);
+     # In authMiddleware.js, write a protect function and read token = req.cookies.jwt;
+     # In middleware, create file authMiddleware.js and import jwt from "jsonwebtoken";
+     # in server.js, import cookieParser from 'cookie-parser'; app.use(cookieParser());
+     PS D:proshop-v2> npm i cookie-parser
+04/07/2023
  42. JWT HTTP Only Cookie
+     # Test in Postman, copy the cookie, paste it in jwt.io to see the decoded form
+     # res.cookie("jwt", token, {httpOnly:true, secure:process.env.NODE_ENV!=="development",
+     #   sameSite: "strict", maxAge: 30 * 24 * 60 * 60 * 1000}); // 30 days in miliseconds
+     # a token using jwt.sign({userId: user._id}, process.env.JWT_SECRET, {expiresIn: "30d"});
+     # In userController.js, import jwt from "jsonwebtoken"; After password validation, create
+     PS D:proshop-v2> npm i jsonwebtoken
  41. How Do JSON Web Tokens Work?
+     # Jwt documentation: https://jwt.io/
  40. User Email & Password Validation
+     # In userController.js, check for (user && (await user.matchPassword(password)))
+     # In userModel.js, import bcrypt from "bcryptjs"; add a function matchPassword to userSchema.methods
+     # app.use(express.urlencoded({ extended: true })); Write authUser function in userController.js
+     # In server.js, activate body parser middleware: app.use(express.json()); and
  39. User Routes & Controller
+     # Create a folder Users in Postman and create requests to test the routes
+     # Create files userRoutes.js in backend/routes, and userController in backend/controllers
 Section 7: Backend Authentication
 
  38. Remove From Cart
+     # Add checkoutHandler function in CartScreen.jsx and attach it to the Checkout button
+     # Add a reducer function removeFromCart in cartSlice.js, export and import in CartScreen
+03/07/2023
  37. Cart Screen
+     # In screens create CartScreen.jsx, and in index.js create a route for /cart
  36. Item Count In Header
+     # import Badge from "react-bootstrap" to show the item count beside the Cart in the Header
  35. Cart Utils File
+     # Cut all the calculations from addToCart and put them to updateCart function in cardUtils.js
+     # Cut the function addDecimals from cardSlice.js, and put it into cardUtils.js
+     # Create a folder utils in frontend/src, and a file cardUtils.js
  34. Qty & Add To Cart Handler
+     # Add a local state qty, write addToCartHandler function which calls the addToCart action
+02/07/2023
  33. Add To Cart Function
+     # export const { addToCart } = cartSlice.actions;
+     # Create a reducer function in cartSlice.js named addToCart
  32. Cart Slice & Reducer
+     # In slices create cartSlice.js and import { createSlice } from "@reduxjs/toolkit";
 Section 6: Shopping Cart Functionality
 
  31. Loader & Message Components
+     # Import the Loader and Alert components to HomeScreen and ProductScreen
+     # Create another component Message.jsx and import { Alert } from "react-bootstrap";
+     # In components folder create a file Loader.jsx and import { Spinner } from "react-bootstrap";
+01/07/2023
  30. Get Product Details Endpoint Challenge
+     # In productsApiSlice.js, add a new endpoints builder query getProductDetails and export
  29. Products API Slice & Get Products Endpoint
+     # In slices folder create a file productsApiSlice.js, import PRODUCTS_URL from constants.js
+20/06/2023
  28. Redux Store & API Slice
+     # In store.js, import { apiSlice } from './slices/apiSlice';
+     # In apiSlice.js, import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+     # Create a folder slices in frontend/src and a file apiSlice.js inside
+     # Create a file constants.js in frontend/src, export BASE_URL, PRODUCTS_URL, USERS_URL, etc.
+     # Install Redux DevTools in both Chrome and Microsoft Edge
+     # Wrap the RouterProvider line with: <Provider store={store}></Provider>
+     # In frontend/index.js, import { Provider } from 'react-redux'; import store from './store';
+     # Create a file store.js in fronend/src, import { configureStore } from "@reduxjs/toolkit";
+     PS D:frontend> npm i @reduxjs/toolkit react-redux
  27. Redux & State Overview
+     # Documentation Redux: https://redux.js.org/, Redux Toolkit: https://redux-toolkit.js.org/
 Section 5: Redux Toolkit Setup & State Management
 
  26. Product Controller
