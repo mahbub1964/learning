@@ -17,11 +17,14 @@ Section 10: Checkout Process - Part 2
  58. Order API Slice & Start Order Screen
  57. Create & Get Orders
  56. Order Routes & Controller
- 55. Payment Method
- 54. Checkout Steps Component
      # 
+ 55. Payment Method
+     # Create a file PaymentScreen.jsx in frontend/src/screens
+     # Write a reducer savePaymentMethod in cartSlice and export the action
+ 54. Checkout Steps Component
+     # Create a file CheckoutSteps.jsx in frontend/src/components
  53. Private Routes
-     # Create a file PrivateRoute.jsx in components
+     # Create a file PrivateRoute.jsx in frontend/src/components
 07/07/2023
  52. Shipping Screen
      # Create a file ShippingScreen.jsx in frontend/src/screens folder
