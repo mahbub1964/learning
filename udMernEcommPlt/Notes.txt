@@ -1,6 +1,6 @@
 MERN From Scratch 2023 | eCommerce Platform
  - Brad Traversy
-08/07/2023
+11/07/2023
  92. Wrap Up
  91. Adding a Custom Domain
  90. Add Server IP To MongoDB Atlas
@@ -8,16 +8,29 @@ MERN From Scratch 2023 | eCommerce Platform
  88. Prepare For Production
 Section 13: Deploy To Production
 Section 12: Reviews, Search & More
+
+ 66. 
 Section 11: Admin Functionality
 
- 60. 
+ 65. Display Order History
+ 64. User Profile & Update
+ 63. PayPal Buttons
+ 62. React - PayPal Integration
+ 61. PayPal Setup & Order Paid
+ 60. Order Page
+     # 
+     # Create a file OrderScreen.jsx in frontend/src/screens folder
 Section 10: Checkout Process - Part 2
 
+10/07/2023
  59. Creating An Order
  58. Order API Slice & Start Order Screen
  57. Create & Get Orders
+     # Create files ordersApiSlice.js & PlaceOrderScreen.jsx in frontend/src/slices & screens
+09/07/2023
  56. Order Routes & Controller
-     # 
+     # Create files orderRoutes.js & orderController.js in backend/routes & controllers
+08/07/2023
  55. Payment Method
      # Create a file PaymentScreen.jsx in frontend/src/screens
      # Write a reducer savePaymentMethod in cartSlice and export the action
