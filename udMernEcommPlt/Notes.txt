@@ -1,6 +1,6 @@
 MERN From Scratch 2023 | eCommerce Platform
  - Brad Traversy
-10/07/2023
+11/07/2023
  92. Wrap Up
  91. Adding a Custom Domain
  90. Add Server IP To MongoDB Atlas
@@ -19,8 +19,10 @@ Section 11: Admin Functionality
  61. PayPal Setup & Order Paid
  60. Order Page
      # 
+     # Create a file OrderScreen.jsx in frontend/src/screens folder
 Section 10: Checkout Process - Part 2
 
+10/07/2023
  59. Creating An Order
  58. Order API Slice & Start Order Screen
  57. Create & Get Orders
