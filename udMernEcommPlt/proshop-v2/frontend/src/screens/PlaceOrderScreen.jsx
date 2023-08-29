@@ -34,8 +34,8 @@ const PlaceOrderScreen = () => {
       }).unwrap();
       dispatch(clearCartItems());
       navigate(`/order/${res._id}`);
-    } catch(error) {
-      toast.error(error)
+    } catch(error) { console.log("error:", error);
+      toast.error((error && error.data? error.data.message: error));  // toast.error(error);
     }
   };
 
@@ -82,7 +82,8 @@ const PlaceOrderScreen = () => {
             <ListGroup.Item><Row><Col>Tax:</Col><Col>{cart.taxPrice}</Col></Row></ListGroup.Item>
             <ListGroup.Item><Row><Col>Total:</Col><Col>{cart.totalPrice}</Col></Row></ListGroup.Item>
             <ListGroup.Item>
-              { error && <Message variant="danger">{ error }</Message> }
+              {/* { error && <Message variant="danger">{ error }</Message> } */}
+              { error && error.data && <Message variant="danger">{ error.data.message }</Message> }
             </ListGroup.Item>
             <ListGroup.Item>
               <Button type="button" className="btn-block" disabled={cart.cartItems.length<1}

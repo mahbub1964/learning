@@ -1,6 +1,6 @@
 MERN From Scratch 2023 | eCommerce Platform
  - Brad Traversy
-11/07/2023
+02/09/2023
  92. Wrap Up
  91. Adding a Custom Domain
  90. Add Server IP To MongoDB Atlas
@@ -15,10 +15,23 @@ Section 11: Admin Functionality
  65. Display Order History
  64. User Profile & Update
  63. PayPal Buttons
- 62. React - PayPal Integration
- 61. PayPal Setup & Order Paid
- 60. Order Page
      # 
+01/09/2023
+ 62. React - PayPal Integration
+     # In screens/OrderScreen.jsx, import {PayPalButtons,usePayPalScriptReducer} from '@paypal/react-paypal-js';
+     # In slices/orderApiSlice.js, add payOrder mutation and getPayPalClientId query
+     # Wrap the RouterProvider line with: <Provider store={store}></Provider>
+     # Inside redux Provider, wrap RouterProvider with: <PayPalScriptProvider deferLoading={true}>
+     # In frontend/src/index.js, import { PayPalScriptProvider } from '@paypal/react-paypal-js';
+     PS D:frontend> npm i @paypal/react-paypal-js
+26/08/2023
+ 61. PayPal Setup & Order Paid
+     # In server.js, create a get route for "/api/config/paypal" which sends the Client Id
+     # Copy the Client Id and save it to .env in PAYPAL_CLIENT_ID
+     # Create an App named proshop (Apps & Credentials -> Create App)
+     # Create Sandbox accounts (Testing Tools -> Sandbox Accounts)
+     # PayPal Developer Link: https://developer.paypal.com
+ 60. Order Page
      # Create a file OrderScreen.jsx in frontend/src/screens folder
 Section 10: Checkout Process - Part 2
 
