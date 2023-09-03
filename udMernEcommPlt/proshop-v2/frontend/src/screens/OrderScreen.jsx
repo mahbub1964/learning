@@ -27,9 +27,9 @@ const OrderScreen = () => {
       if(order && !order.isPaid) { if(!window.paypal) loadPayPalScript(); }
   } }, [order, paypal, paypalDispatch, loadingPayPal, errorPayPal]);
 
-  function onApprove(data, actions) {
+  function onApprove(data, actions) { console.log("onApprove:: data:", data, ", actions:", actions);
     return actions.order.capture().then(async function(details) {
-      try {
+      try { console.log("onApprove:: orderId:", orderId, ", details:", details);
         await payOrder({orderId, details}); refetch(); toast("Payment successful");
       } catch(err) {
         toast(err?.data?.message || err.message);
@@ -37,14 +37,14 @@ const OrderScreen = () => {
     });
   }
 
-  async function onApproveTest() {
+  async function onApproveTest() { console.log("onApproveTest:: orderId:", orderId);
     await payOrder({orderId, details: { payer: {} }});
     refetch(); toast("Payment successful");
   }
 
   function onError(err) { toast.error(err.message); }
 
-  function createOrder(data, actions) {
+  function createOrder(data, actions) { console.log("createOrder:: order:", order);
     actions.order.create({ purchase_units: [{ amount:{ value: order.totalPrice } }] })
     .then(orderId => orderId);
   }

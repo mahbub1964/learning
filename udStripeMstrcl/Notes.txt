@@ -1,0 +1,184 @@
+Stripe Masterclass With React.js & Node.js
+ - Abdi Ahmed
+01/10/2023
+
+ 97. Bonus Lecture
+ 96. Pay With Saved Card & Wrap Up
+ 95. Test Saved Card
+ 94. Saved Card During Payment
+ 93. Show Saved Cards 2
+ 92. Show Saved Card 1
+ 91. Validate User Fix
+ 90. Create Get Payment Method Endpoint
+ 89. Create Setup Intent Endpoint
+ 88. Get Customer From Stripe Function
+Section 7: Checkout Using Saved Credit Card
+
+ 87. Auth Helper Functions
+ 86. Firebase Initialization
+ 85. Create Service Account Environment Variable
+ 84. Update Fetch fromAPI function
+ 83. Update Header Menu Links
+ 82. Update Sign In Component
+ 81. Update Sign Up Component
+01/10/2023
+ 80. Create User Context
+ 79. Create User Profile Function
+ 78. Important - please read before next video - Firebase user profile setup update
+ 77. Build Sign In Component
+ 76. Build Sign Up Component
+ 75. Create Firebase Project
+Section 6: Setup Authentication
+
+ 74. Webhook Update
+     # 
+ 73. Create Handle Checkout Component
+30/09/2023
+ 72. Build Custom Checkout Component 2
+ 71. Build Custom Checkout Component
+     # Create a file "custom-checkout.jsx" in src/components/checkout/custom-checkout
+ 70. Build Shipping Address Component 2
+ 69. Build Shipping Address Component
+     PS D:react-ecommerce> yarn add formik
+     # Create a folder "custom-checkout" in src/components/checkout, and a file "shipping-address.jsx"
+ 68. Note on Fromik import
+ 67. Test Payment Intent Endpoint
+ 66. Create Payment Intent Endpoint
+     # Create a file "paymentIntent.js" in server/api
+ 65. Stripe Custom Checkout Process
+Section 5: Stripe Custom Checkout
+
+29/09/2023
+ 64. Webhooks 3
+     # Create a file "webhook.js" in server/api
+ 63. Webhooks 2
+ 62. Webhooks
+ 61. Success Component Fix
+ 60. Webhooks Introduction
+ 59. Create Success & Canceled Pages
+     # Create two files "success.jsx" and "canceled.jsx" in src/components/checkout/stripe-checkout
+ 58. Stripe Checkout Component 2
+ 57. Stripe Checkout Component
+     # Create a folder "stripe-checkout" in src/components/checkout
+28/09/2023
+ 56. Fetch Helper Function
+ 55. Checkout Page
+     # Create a folder "checkout" in src/components
+27/09/2023
+ 54. Setup Stripe On Frontend
+     PS D:react-ecommerce> yarn add @stripe/react-stripe-js @stripe/stripe-js
+26/09/2023
+ 53. Test Checkout Session
+ 52. Create Checkout Session Endpoint 2
+ 51. Create Checkout Session Endpoint
+     # Create a folder "api" in server, and a file "checkout.js" inside
+ 50. Create Stripe Object In The Server
+     # Create a file "stripe.js" in server
+ 49. Stripe Checkout Process
+ 48. What Is Stripe Checkout
+25/09/2023
+ 47. Node Setup
+     PS D:server> npm start
+     # https://github.com/cagarweyne/stripe-masterclass-server
+     PS D:server> touch index.js .gitignore .env
+     PS D:server> npm i -D nodemon
+     PS D:server> npm install dotenv
+     PS D:server> npm install express stripe cors
+     PS D:server> npm init -y
+     PS D:udStripeMstrcl> cd server
+     PS D:udStripeMstrcl> mkdir server
+ 46. Stripe Payment Flow
+ 45. Stripe Dashboard
+ 44. Stripe Account Setup
+ 43. Stripe Introduction
+ 42. React Cart Repo
+     # https://github.com/cagarweyne/react-cart
+Section 4: Stripe Hosted Checkout
+
+ 41. Persist Cart Data
+ 40. Clear The Cart
+24/09/2023
+ 39. Remove Item From Cart
+ 38. Decrease Item Quantity
+ 37. Cart Page Build 5
+ 36. Cart Page Build 4
+ 35. Cart Page Build 3
+ 34. Cart Page Build 2
+     # Create a folder "cart-page" in src/components/pages
+ 33. Cart Page Build 1
+     # Create a folder "icons" in src/components, and a file "index.jsx" in icons (copy from source)
+23/09/2023
+ 32. SVG Component For Cart Page
+     # https://github.com/cagarweyne/stripe-masterclass/blob/master/src/components/icons/index.jsx
+ 31. Increase Item Quantity
+ 30. Add Click Handler To Single Product Component
+ 29. Test Add Product Feature
+ 28. Add Click Handler To Add Product To Cart
+ 27. Helper Function
+     # Create a file "helpers.js" in src
+ 26. Add Product
+ 25. Create Cart Context
+     # Create two files "cart-cintext.jsx" and "caer-reducer.js" in src/context
+ 24. Introduction
+Section 3: Build Cart with React Context and useReducer Hook
+
+ 23. Single Product View 3
+22/09/2023
+ 22. Single Product View 2
+21/09/2023
+ 21. Single Product View 1
+     # Create a folder "single-product" in src/components
+ 20. Shop Page 2
+ 19. Shop Page 1
+     # Create a folder "pages" in src/components, and a folder "shop" inside pages
+ 18. Not Found
+     # Create a file "not-found.jsx" in src/components
+ 17. Layout and Home Page
+     # Create a file "home-page.jsx" in src/components
+     # Create a file "layout.jsx" in src/components/shared
+ 16. Footer
+     # Create a folder "footer" in src/components
+ 15. Featured Collection
+     # Create a folder "featured-collection" in src/components
+20/09/2023
+ 14. Featured Product
+     # Create a folder "shared" in src/components, and a file featured-product.jsx inside
+ 13. Products Context
+     # Create a folder "context" in src, and a file products-context.jsx inside
+     # Create a folder "shop" in src, and a file index.js inside shop
+19/09/2023
+ 12. Main Section 2
+08/09/2023
+ 11. Main Section 1
+06/09/2023
+ 10. Hero
+     # Copy code for Large hero from https://bulma.io/documentation/layout/hero/
+  9. Cart Icon
+     # https://www.flaticon.com/
+  8. Header 2
+05/09/2023
+  7. Header 1
+     PS D:react-ecommerce> yarn add react-router-dom
+     # Create a folder "components" in src, and a folder "header" inside components
+  6. Node Sass Issue
+  5. CSS Setup
+     # Rename App.css to App.scss
+     PS D:react-ecommerce> yarn add bulma node-sass
+04/09/2023
+  4. Setup React App With CRA
+     PS D:react-ecommerce> yarn start
+     PS D:react-ecommerce> npm install yarn -g
+     PS D:udStripeMstrcl> cd react-ecommerce
+     PS D:udStripeMstrcl> npx create-react-app react-ecommerce
+Section 2: React Ecommerce Site Build
+
+  3. Course Resources
+     # 1. Completed Front End Github repo: https://github.com/cagarweyne/stripe-masterclass
+     # 2. Completed Back End Github repo: https://github.com/cagarweyne/stripe-masterclass-server
+     # 3. Hero Image: https://github.com/cagarweyne/stripe-masterclass/blob/master/src/assets/ben-white-unsplash.jpg
+     # 4. Cart Icon PNG: https://github.com/cagarweyne/stripe-masterclass/blob/master/src/assets/shopping-bag.png
+     # 5. Studio Bag for homepage section: https://github.com/cagarweyne/stripe-masterclass/blob/master/src/assets/studio-bag.png
+     # 6. The CSS for the App.scss file: https://github.com/cagarweyne/stripe-masterclass/blob/master/src/App.scss 
+  2. What We're Going To Be Building
+  1. Introduction
+Section 1: Course Introduction
