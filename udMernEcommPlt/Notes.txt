@@ -1,6 +1,6 @@
 MERN From Scratch 2023 | eCommerce Platform
  - Brad Traversy
-02/09/2023
+03/09/2023
  92. Wrap Up
  91. Adding a Custom Domain
  90. Add Server IP To MongoDB Atlas
@@ -16,6 +16,8 @@ Section 11: Admin Functionality
  64. User Profile & Update
  63. PayPal Buttons
      # 
+     # Issue appears to be related with credentials in the sandbox environment
+     # click_initiate_payment_reject Error: Expected an order id to be passed
 01/09/2023
  62. React - PayPal Integration
      # In screens/OrderScreen.jsx, import {PayPalButtons,usePayPalScriptReducer} from '@paypal/react-paypal-js';

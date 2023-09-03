@@ -9,9 +9,11 @@ export const ordersApiSlice = apiSlice.injectEndpoints({
     getOrderDetails: builder.query({ query: (orderId) =>
       ({url:`${ORDERS_URL}/${orderId}`}), keepUnusedDataFor: 5 // seconds
     }),
-    payOrder: builder.mutation({ query: ({orderId, details}) => ({
-      url:`${PAYPAL_URL}/${orderId}/pay`, method: "PUT", body: {...details}
-    })}),
+    payOrder: builder.mutation({ query: ({orderId, details}) => (
+      (console.log("payOrder:: orderId:", orderId, ", details:", details), {
+        url:`${PAYPAL_URL}/${orderId}/pay`, method: "PUT", body: {...details}
+      })
+    )}),
     getPayPalClientId: builder.query({ query: () =>
       ({ url: PAYPAL_URL }), keepUnusedDataFor: 5 // seconds
     }),
