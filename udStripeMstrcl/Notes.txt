@@ -1,6 +1,6 @@
 Stripe Masterclass With React.js & Node.js
  - Abdi Ahmed
-01/10/2023
+07/10/2023
 
  97. Bonus Lecture
  96. Pay With Saved Card & Wrap Up
@@ -14,24 +14,38 @@ Stripe Masterclass With React.js & Node.js
  88. Get Customer From Stripe Function
 Section 7: Checkout Using Saved Credit Card
 
+07/10/2023
  87. Auth Helper Functions
  86. Firebase Initialization
  85. Create Service Account Environment Variable
+
  84. Update Fetch fromAPI function
  83. Update Header Menu Links
+     # 
+06/10/2023
  82. Update Sign In Component
  81. Update Sign Up Component
-01/10/2023
+05/10/2023
  80. Create User Context
+     # Create a file "user-context.jsx" in src/context
+04/10/2023
  79. Create User Profile Function
+03/10/2023
  78. Important - please read before next video - Firebase user profile setup update
  77. Build Sign In Component
+     # Create a folder "sign-in" in src/components
  76. Build Sign Up Component
+     # Create a folder "sign-up" in src/components
  75. Create Firebase Project
+     PS D:react-ecommerce> yarn add firebase
+     # Create a folder "firebase" in src, and a file "index.js" inside
+     # Create a project "nomad bags store" in firebase, and copy the config object from project settings
 Section 6: Setup Authentication
 
+02/10/2023
  74. Webhook Update
-     # 
+     $ stripe listen --forward-to http://localhost:8080/webhook (stripe CLI)
+01/10/2023
  73. Create Handle Checkout Component
 30/09/2023
  72. Build Custom Checkout Component 2

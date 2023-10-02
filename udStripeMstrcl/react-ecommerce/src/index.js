@@ -6,6 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ProductsContextProvider from './context/products-context';
 import CartContextProvider from './context/cart-context';
+import UserContextProvider from './context/user-context';
 import { Elemnts } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 
@@ -17,7 +18,9 @@ root.render(
     <ProductsContextProvider>
       <CartContextProvider>
         {/* <Elemnts stripe={stripePromise}> */}
-          <App />
+          <UserContextProvider>
+            <App />
+          </UserContextProvider>
         {/* </Elemnts> */}
       </CartContextProvider>
     </ProductsContextProvider>

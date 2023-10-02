@@ -46,6 +46,9 @@ form { padding: 2rem; text-align: center;
 #buy-it-now-btn { &:hover {background-color: #606060;} }
 
 @media(min-width: 1024px) {
-  form { width: 80%; margin: 0 auto;
+  form { width: 60%; margin: 0 auto;
     input[type=text],input[type=email],input[type=password] { width: 65%; }
 } }
+
+.error { border: 1px solid red; }
+.error-message { color: red; font-size: 1.5rem; }
