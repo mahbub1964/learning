@@ -1,6 +1,6 @@
 Stripe Masterclass With React.js & Node.js
  - Abdi Ahmed
-07/10/2023
+14/10/2023
 
  97. Bonus Lecture
  96. Pay With Saved Card & Wrap Up
@@ -8,20 +8,27 @@ Stripe Masterclass With React.js & Node.js
  94. Saved Card During Payment
  93. Show Saved Cards 2
  92. Show Saved Card 1
+14/10/2023
  91. Validate User Fix
  90. Create Get Payment Method Endpoint
  89. Create Setup Intent Endpoint
+     # 
  88. Get Customer From Stripe Function
+     # Create a folder "helpers" in server, and a file getCustomer.js inside
 Section 7: Checkout Using Saved Credit Card
 
-07/10/2023
+13/10/2023
  87. Auth Helper Functions
+     # Create a folder "auth" in server, and two files named decodeJWT.js and validateUser.js
  86. Firebase Initialization
+     # Create a file firebase.js in server
+     PS D:server> npm i firebase-admin
  85. Create Service Account Environment Variable
-
+     # Create an env variable named GOOGLE_APPLICATION_CREDENTIALS = './service-account.json'
+     # Copy the downloaded private key file to server/ and rename it to service-account.json
+     # In Firebase console, go to Project settings => Service accounts => Generate new private key
  84. Update Fetch fromAPI function
  83. Update Header Menu Links
-     # 
 06/10/2023
  82. Update Sign In Component
  81. Update Sign Up Component

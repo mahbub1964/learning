@@ -1,10 +1,10 @@
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/firestore'; // for the db
-import 'firebase/compat/auth';
+// import firebase from 'firebase/compat/app';
+// import 'firebase/compat/firestore'; // for the db
+// import 'firebase/compat/auth';
 
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
+import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
 
 const config = {
   apiKey: "AIzaSyDETH7nfUbZwndEDi87Qa6tKB17SvE8bmM",
@@ -15,28 +15,28 @@ const config = {
   appId: "1:836783489489:web:63e2370d32bdd79d1d20f0"
 };
 
-firebase.initializeApp(config);
-const firestore = firebase.firestore();
-const authOld = firebase.auth();
+// firebase.initializeApp(config);
+// const firestore = firebase.firestore();
+// const authOld = firebase.auth();
 
 const app = initializeApp(config);
-const db = getFirestore(app); // db
-const authNew = getAuth(app);
+const db = getFirestore(app); // firestore db
+const auth = getAuth(app);
 
-const createUserProfileDocument_Old = async (userAuth, additionalData) => {
-  console.log("createUserProfileDocument:: userAuth:", userAuth, additionalData);
-  if(!userAuth) return;
-  const userRef = firestore.doc(`users/${userAuth.multiFactor.user.uid}`); //users/uniq26535
-  const snapShot = userRef.get();
-  if(!snapShot.exists) {
-    const { displayName, email } = userAuth;
-    const createdAt = new Date();
-    try {
-      await userRef.set({ displayName, email, createdAt, ...additionalData });
-    } catch(error) { console.log('error creating user', error.message); }
-  } console.log("userRef:", userRef);
-  return userRef;
-};
+// const createUserProfileDocument_Old = async (userAuth, additionalData) => {
+//   console.log("createUserProfileDocument:: userAuth:", userAuth, additionalData);
+//   if(!userAuth) return;
+//   const userRef = firestore.doc(`users/${userAuth.multiFactor.user.uid}`); //users/uniq26535
+//   const snapShot = userRef.get();
+//   if(!snapShot.exists) {
+//     const { displayName, email } = userAuth;
+//     const createdAt = new Date();
+//     try {
+//       await userRef.set({ displayName, email, createdAt, ...additionalData });
+//     } catch(error) { console.log('error creating user', error.message); }
+//   } console.log("userRef:", userRef);
+//   return userRef;
+// };
 
 const createUserProfileDocument = async (userAuth, additionalData) => {
   console.log("createUserProfileDocument:: userAuth:", userAuth, additionalData);
@@ -50,11 +50,11 @@ const createUserProfileDocument = async (userAuth, additionalData) => {
   //     await userRef.set({ displayName, email, createdAt, ...additionalData });
   //   } catch(error) { console.log('error creating user', error.message); }
   // } console.log("userRef:", userRef);
-  const { displayName, email } = userAuth;
+  const { uid, displayName, email } = userAuth;
   const createdAt = new Date(); let userRef;
   try {
     userRef = await addDoc(collection(db, 'users'), {
-      displayName, email, createdAt, ...additionalData
+      uid, displayName, email, createdAt, ...additionalData
     }); console.log("User document written with ID: ", userRef.id);
   } catch (error) {
     console.error('error creating user', error);
@@ -62,4 +62,4 @@ const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef;
 };
 
-export { firestore, db, createUserProfileDocument, authOld, authNew };
+export { db, createUserProfileDocument, auth }; // firestore, authOld,

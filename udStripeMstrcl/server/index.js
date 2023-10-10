@@ -3,6 +3,7 @@ require('dotenv').config({ path: './.env' }); //console.log('SECRET_KEY', proces
 const createCheckoutSession = require('./api/checkout');
 const webhook = require('./api/webhook');
 const paymentIntent = require('./api/paymentIntent');
+const decodeJWT = require('./auth/decodeJWT');
 
 const app = express();
 const port = 8080;
@@ -11,6 +12,7 @@ app.use(express.json({
   verify: (req, res, buffer) => req['rawBody'] === buffer
 }));
 app.use(cors({ origin: true }));
+app.use(decodeJWT);
 
 app.get('/', (req, res) => res.send('Hello World!'));
 

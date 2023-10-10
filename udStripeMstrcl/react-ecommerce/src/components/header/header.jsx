@@ -1,12 +1,22 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { authOld, authNew } from '../../firebase';
+import { getAuth, signOut } from 'firebase/auth';
+// import { authOld } from '../../firebase'; //, auth
 import { UserContext } from '../../context/user-context';
 import CartIcon from '../cart-icon/cart-icon';
 import './header.styles.scss';
 
 const Header = () => {
-  const { user } = useContext(UserContext); console.log("user:", user);
+  const { user, setUser } = useContext(UserContext); //console.log("user:", user);
+  const auth = getAuth(); //console.log("Header:: auth:", auth);
+  //console.log("Header:: auth.currentUser:", auth.currentUser);
+
+  useEffect(() => {
+    if(auth.currentUser) { const { uid, displayName, email } = auth.currentUser;
+      setUser({ uid, displayName, email });
+    } else setUser(null);
+  }, [auth.currentUser]);
+
   return (
     <nav className='nav-menu container'>
       <div className='logo'>
@@ -17,8 +27,8 @@ const Header = () => {
         <li><Link to='/shop'>Shop</Link></li>
         {!user && <li><Link to='/sign-in'>Sign In</Link></li>}
         {!user && <li><Link to='/sign-up'>Sign Up</Link></li>}
-        {!!!user && <li onClick={() => {console.log("Signing Out"); authOld.signOut()}
-          }>Sign Out</li>}
+        {user && <li onClick={async () => { //console.log("Signing Out"); //authOld.signOut();
+          await signOut(auth); setUser(null); }}>Sign Out</li>}
       </ul>
       <CartIcon />
     </nav>

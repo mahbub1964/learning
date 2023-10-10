@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Formik } from 'formik';
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { createUserProfileDocument } from '../../firebase'; //, authOld, auth
+import { UserContext } from '../../context/user-context';
 import Layout from '../shared/layout';
-import { authOld, authNew, createUserProfileDocument } from '../../firebase';
 import './sign-up.styles.scss';
 
 const validate = values => {
@@ -18,18 +20,43 @@ const validate = values => {
 
 const SignUp = () => {
   const [error, setError] = useState(null);
-  const initialValues = { firstname: '', email: '', password: '' };
+  const { user, setUser } = useContext(UserContext); //console.log("user:", user);
   const navigate = useNavigate();
+  const initialValues = { firstname: '', email: '', password: '' };
+
+  // const handleSignUp_Old = async (values, { setSubmitting }) => {
+  //   const { firstname, email, password } = values; //console.log("handleSignUp:: values:", values);
+  //   try {
+  //     const { user } = await authOld.createUserWithEmailAndPassword(email, password);
+  //     await createUserProfileDocument(user, { displayName: firstname });
+  //     setSubmitting(false); navigate('/shop');
+  //   } catch(error) { console.log(error);
+  //     setSubmitting(false); setError(error);
+  //   }
+  // };
+
   const handleSignUp = async (values, { setSubmitting }) => {
-    const { firstname, email, password } = values; //console.log("handleSignUp:: values:", values);
-    try {
-      const { user } = await authOld.createUserWithEmailAndPassword(email, password);
-      await createUserProfileDocument(user, { displayName: firstname });
-      setSubmitting(false); navigate('/shop');
-    } catch(error) { console.log(error);
-      setSubmitting(false); setError(error);
+    const { firstname, email, password } = values; console.log("handleSignUp:: values:", values);
+    if(firstname) { console.log("Creating user with firstname:", firstname);
+      try {
+        // const { user } = await authOld.createUserWithEmailAndPassword(email, password);
+        const auth = getAuth();
+        const { user } = await createUserWithEmailAndPassword(auth, email, password);
+        //console.log("Sign-up:: auth.currentUser:", auth.currentUser);
+        await updateProfile(auth.currentUser, { displayName: firstname });
+        //console.log("getAuth().currentUser:", getAuth().currentUser);
+        //console.log("auth.currentUser:", auth.currentUser, ", user:", user);
+        if(user) {
+          await createUserProfileDocument(user, { displayName: firstname });
+          const { uid, displayName, email } = user; setUser({ uid, displayName, email });
+        } else setUser(null);
+        setSubmitting(false); navigate('/shop');
+      } catch(error) { console.log(error);
+        setSubmitting(false); setError(error); setUser(null);
+      }
     }
   };
+
   return (
     <Layout>
       <div className='sign-up'>
