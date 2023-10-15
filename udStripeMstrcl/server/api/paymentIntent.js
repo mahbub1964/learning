@@ -1,5 +1,4 @@
 const stripeAPI = require('../stripe');
-const stripe = require('../stripe');
 
 function calculateOrderAmount(cartItems) {
   return cartItems.reduce((total, product) => {
@@ -15,7 +14,7 @@ async function paymentIntent(req, res) {
       amount: calculateOrderAmount(cartItems), currency: 'usd', description,
       payment_method_types: ['card'], receipt_email, shipping,
     });
-    res.status(200).json({ clientSecret: paymentIntent.client_secret });
+    res.status(200).json({ clientSecret: paymentIntent.client_secret, id: paymentIntent.id });
   } catch(error) { console.log(error);
     res.status(400).json({ error: 'an error occured, unable to create payment intent'});
   }

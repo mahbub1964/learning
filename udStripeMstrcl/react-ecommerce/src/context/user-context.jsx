@@ -28,7 +28,7 @@ const UserContextProvider = ({ children }) => {
       } else { setUser(null); setLoading(false); }
     });
     return unsubscribeFromAuth(); //unsubscribeFromAuth_Old();
-  }, [auth]); //auth
+  }, []); //auth
   const userContext = { user, loading, setUser };
   //if(loading) return <div>Loading...</div>;
   return (

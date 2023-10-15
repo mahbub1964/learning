@@ -1,6 +1,6 @@
 import './hero.styles.scss';
 
-const Hero = () => {
+const Hero = () => { //console.log("Hero");
   return (
     <section className="hero is-large is-info hero-image">
       <div className="hero-body">

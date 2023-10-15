@@ -6,7 +6,7 @@ import { UserContext } from '../../context/user-context';
 import CartIcon from '../cart-icon/cart-icon';
 import './header.styles.scss';
 
-const Header = () => {
+const Header = () => { //console.log("Header");
   const { user, setUser } = useContext(UserContext); //console.log("user:", user);
   const auth = getAuth(); //console.log("Header:: auth:", auth);
   //console.log("Header:: auth.currentUser:", auth.currentUser);

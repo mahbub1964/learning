@@ -16,7 +16,7 @@ import SignUp from './components/sign-up/sign-up';
 import SignIn from './components/sign-in/sign-in';
 import './App.scss';
 
-function App() {
+function App() { //console.log("App");
   return (
     <div className="App">{/* React ecommerce */}
       {/* <Header /><Hero /><MainSection /><FeaturedCollection /><Footer /> */}

@@ -1,18 +1,21 @@
 Stripe Masterclass With React.js & Node.js
  - Abdi Ahmed
-14/10/2023
-
+17/10/2023
  97. Bonus Lecture
+     # 
  96. Pay With Saved Card & Wrap Up
+16/10/2023
  95. Test Saved Card
- 94. Saved Card During Payment
+ 94. Save Card During Payment
  93. Show Saved Cards 2
  92. Show Saved Card 1
-14/10/2023
+15/10/2023
  91. Validate User Fix
  90. Create Get Payment Method Endpoint
+     # Create two files "getPaymentMethod.js" and "updatePaymentIntent.js" in server/api
+14/10/2023
  89. Create Setup Intent Endpoint
-     # 
+     # Create a file "setupIntent.js" in server/api
  88. Get Customer From Stripe Function
      # Create a folder "helpers" in server, and a file getCustomer.js inside
 Section 7: Checkout Using Saved Credit Card
