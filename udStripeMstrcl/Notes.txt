@@ -2,7 +2,6 @@ Stripe Masterclass With React.js & Node.js
  - Abdi Ahmed
 17/10/2023
  97. Bonus Lecture
-     # 
  96. Pay With Saved Card & Wrap Up
 16/10/2023
  95. Test Saved Card
