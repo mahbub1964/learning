@@ -1,0 +1,278 @@
+Master Laravel for Beginners & Intermediate 2024
+ - Piotr Jura
+15/04/2024
+     # 
+Section 12: OLD CONTENT: Creating the New Laravel Project
+Section 11: OLD CONTENT: Mac Specific Setup
+Section 10: OLD CONTENT: Windows Specific Setup
+Section 9: OLD CONTENT: Introduction and Recommendations
+Section 8: Project #5 - Job Board
+Section 7: Project #4 - Livewire Poll App
+Section 6: Project #3 - Events Management App (REST API)
+
+ 65. Rate Limiting
+ 64. Scoped Resource Controller - Adding a Review
+ 63. Blade Components - Star Rating Component
+ 62. Rating and Review Count on All Pages
+ 61. Invalidating Cache
+08/04/2024
+ 60. Cache and Caching Queries
+     # 
+ 59. One Book Page
+     # Create view show.blade.php in resources\views\books
+ 58. Popular or Highest Rated - the Logic
+ 57. Popular or Highest Rated - the View
+ 56. Filter Books by Title - Adding the Form
+07/04/2024
+ 55. Displaying the Book List
+     # Also a layouts folder, and a layout file app.blade.php
+     # Create folder books in resources\views, and a file index.blade.php there
+ 54. Controllers & Resource Controllers
+     PS C:> php artisan route:list
+     PS C:> php artisan make:controller BookController --resource
+     PS C:> php artisan route:list
+06/04/2024
+ 53. Getting Books with Recent Reviews
+     > \App\Models\Book::highestRated('2023-01-01','2023-03-31')->popular('2023-01-01','2023-03-31')->minReviews(2)->get();
+     > \App\Models\Book::popular()->minReviews(10)->get();
+     PS C:> php artisan tinker
+     # Write a scope for filtering books with minimum 'reviews' named scopeMinReviews
+     > \App\Models\Book::highestRated('2023-01-01', '2023-03-31')->get();
+     PS C:> php artisan tinker
+     # And modify scopeHighestRated to include $from, $to using this
+     # Move the filtering logic to a private function named dateRangeFilter
+     > \App\Models\Book::popular('2023-01-01', '2023-03-31')->get();
+     PS C:> php artisan tinker
+     # Modify function scopePopular to include parameters $from and $to
+ 52. HEADS UP! Explaining the Confusion with "Popular Books" Feature!
+ 51. Highest Rated & Popular Books
+     > \App\Models\Book::popular()->highestRated()->get();
+     PS C:> php artisan tinker
+     # Write another scope function for highest 'rating' named scopeHighestRated
+     # Write a scope function for maximum 'reviews' named scopePopular, in Book model
+ 50. Aggregations on Relations
+     > \App\Models\Book::withCount('reviews')->withAvg('reviews','rating')
+       ->having('reviews_count','>=',10)->orderBy('reviews_avg_rating','desc')->limit(10)->toSql();
+     > \App\Models\Book::withCount('reviews')->withAvg('reviews','rating')
+       ->having('reviews_count','>=',10)->orderBy('reviews_avg_rating','desc')->limit(10)->get();
+     > \App\Models\Book::limit(5)->withAvg('reviews','rating')->orderBy('reviews_avg_rating')->toSql();
+     > \App\Models\Book::limit(5)->withAvg('reviews','rating')->orderBy('reviews_avg_rating')->get();
+     > clear
+     > \App\Models\Book::withCount('reviews')->latest()->limit(3)->get();
+     > \App\Models\Book::withCount('reviews')->get();
+     PS C:> php artisan tinker
+04/04/2024
+ 49. Local Query Scopes
+     > \App\Models\Book::title('eum')->where('created_at','>','2023-12-01')->toSql(); 
+     > \App\Models\Book::title('eum')->where('created_at','>','2023-12-01')->get(); 
+     > \App\Models\Book::title('eum')->get();
+     PS C:> php artisan tinker
+     # Write a scope function for 'title' named scopeTitle, in Book model
+     > \App\Models\Book::where('title', 'LIKE', '%eum%')->get();
+     PS C:> php artisan tinker
+ 48. Querying & Associating Related Models
+     > $review = \App\Models\Review::with('book')->find(1);
+     > $book2->reviews()->save($review);
+     > $book2 = \App\Models\Book::find(2);
+     > $review->book;
+     > $review = \App\Models\Review::find(1);
+     > $review = $book->reviews()->create(['review'=>'Sample review', 'rating'=>5]);
+     > $book = \App\Models\Book::find(1);
+     PS C:> php artisan tinker
+     # Modify Review model and add protected $fillable = ['review', 'rating'];
+     > $book->reviews;
+     > $book = \App\Models\Book::find(1);
+     > $book->reviews()->save($review);
+     > $review->book_id = 1; $review->save(); (Will work, but is not the recommended way)
+     > $review->rating = 3;
+     > $review->review = 'This was fine';
+     > $review = new \App\Models\Review();
+     > $book = \App\Models\Book::find(1);
+     > $book2->load('reviews');
+     > $book2 = \App\Models\Book::find(2);
+     > $books = \App\Models\Book::with('reviews')->take(3)->get();
+     > $book1 = \App\Models\Book::with('reviews')->find(1); (Eager loading)
+     > $reviews = $book->reviews;
+     > $book1 = \App\Models\Book::find(1); (Lazy loading, doesn't load the related reviews)
+     PS C:> php artisan tinker
+ 47. Factory & Seeder
+     PS C:> php artisan migrate:refresh --seed
+     # Modify DatabaseSeeder.php to generate 33 good, 33 average and 34 bad books
+     PS C:> php artisan make:factory ReviewFactory --model=Review
+     PS C:> php artisan make:factory BookFactory --model=Book
+ 46. Defining the One to Many Relationship
+     # And function book(){ return $this->belongsTo(Book::class); } in Reviews model
+     # Write function reviews(){return $this-hasMany(Review::class);} in Books model
+     PS C:> php artisan migrate:refresh
+     # Modify create_reviews migration and add a foreign key 'book_id'
+03/04/2024
+ 45. Creating the Book Review Project and Setting Up
+     PS C:> php artisan migrate
+     PS C:> php artisan make:model Review -m
+     PS C:> php artisan make:model Book -m
+     # --prefer-dist downloads a smaller package (without test related codes)
+     PS C:> composer create-project --prefer-dist laravel/laravel book-review
+ 44. Project #2 - Section Introduction
+Section 5: Project #2 - Book Reviews
+
+ 43. Styling Flash Message & Using Alpine.js
+     # https://alpinejs.dev/ - Alpine.js
+ 42. Styling Forms
+02/04/2024
+ 41. Styling the Task Page
+29/03/2024
+ 40. Adding Styling with Tailwind CSS
+     # Add the Play CDN Script tag in the head section of the layout file
+     # Tailwind CSS - https://tailwindcss.com/
+ 39. Toggling Task State
+28/03/2024
+ 38. Adding Pagination
+ 37. Reusing Blade Code - Subviews
+ 36. Deleting Data
+27/03/2024
+ 35. Reusability (Route Model Binding Form Requests, Mass Assignment)
+     # This can also be enabled by setting $guarded, which is dangerous
+     # To enable it, the protected $fillable property must be set in Models
+     # Mass asignment of attributes in Models is disabled by default
+     # and replace $requst->validate() calls with $request->validated();
+     # Replace Request with TaskRequest in Route functions
+     # Return the validation rules array from the rules function
+     # Modify the created TaskRequest.php in app/Http/Requests: authorize function return true;
+     PS C:> php artisan make:request TaskRequest
+     # Identical validation rules can be extracted and put into a Form Request
+     # Type hinted model binding, replace $id with Task $task
+ 34. Keeping Old Values in the Form
+ 33. Edit Form
+26/03/2024
+ 32. Sessions, Errors & Flash Messages
+ 31. Validating and Storing Data
+25/03/2024
+ 30. Forms and CSRF Protection
+     # To prevent Cross Site Request Forgery, @csrf is added in blade forms
+     PS C:> php artisan route:list
+24/03/2024
+ 29. Model and Reading Data
+     C:> php artisan tinker (lets you write orm queries)
+     > \App\Models\Task::all();
+     > \App\Models\Task::select('id','title')->where('completed',true)->get();
+23/03/2024
+ 28. Model Factory and Seeder
+     PS C:> php artisan migrate:refresh --seed (Recreates the database and seed)
+     PS C:> php artisan make:factory TaskFactory --model=Task
+     PS C:> php artisan db:seed
+     # Uncomment User::factory(10)->create(); in DatabaseSeeder.php
+ 27. Models and Migrations
+     PS C:> php artisan migrate
+     PS C:> php artisan migrate, php artisan migrate:rollback
+     # Modify create_tasks_table and add title, description, long_description and completed fields
+22/03/2024
+     PS C:> php artisan make:model Task -m (-m flag will create a migration)
+ 26. Connecting to the Database from Laravel
+ 25. Running a MySQL Database and Client Using Docker
+     # In .env file, set DB_CONNECTION=mysql, and run migrations again
+     PS C:> php artsan migrate (Migrations ran successfully, but could not see the created data)
+     # In MySQL Workbench: CREATE DATABASE laravel; DROP DATABASE laravel;
+21/03/2024
+ 24. Layouts Using Layout Inheritance
+     # Create folder named layouts in resources/views, and a file app.blade.php
+ 23. Blade Directives
+     # @if @else @endif, @foreach @endforeach, @forelse @empty @endforelse
+20/03/2024
+ 22. Blade Templates
+     # HTML tags are escaped in the passed parameters
+     # Remove Welcome.blade.php and create index.blade.php in resources/views
+19/03/2024
+ 21. All About Routing
+     PS C:> php artisan route:list (to show a list of routes)
+18/03/2024
+ 20. Creating Laravel Project
+     PS C:> php artisan (to see all the available artisan commands, we can create custom commands)
+     PS C:> php artisan serve
+     # Installed DB Browser for SQLite, to view contents of database.sqlite
+     # Showed Github credentials error, but continued after hitting Enter
+     PS C:> composer create-project laravel/laravel l11-task-list --prefer-source
+     PS C:> SET COMPOSER_PROCESS_TIMEOUT=2000
+     # Enable extension=pdo_sqlite in php.ini
+     # To solve could not find driver (SQL: PRAGMA foreign_keys = ON;):
+17/03/2024
+     PS C:> php artisan serve
+     # test folder is for test scripts and vendor folder is managed by composer
+     # routes/web.php file contains all the http routes
+     # resources/views folder contains the blade templates
+     # public/index.php file is the entry point to our application
+     # Database connections are declared in config/database.php file
+     # "autoload" block in composer.json controls autoloading of files
+     # PSR - PHP Standards Recommendations
+     PS C:> composer create-project laravel/laravel l11-task-list --prefer-dist
+     PS C:> composer create-project laravel/laravel l11-task-list --prefer-source
+     # To solve ssh Github credentials problem: SET COMPOSER_PROCESS_TIMEOUT=2000, then
+     PS C:> composer create-project laravel/laravel l11-task-list
+     # Modify php.ini and enable extension fileinfo
+     PS C:> php --ini (to see which files are used by PHP)
+     PS C:> composer create-project laravel/laravel:^10 l10-task-list (requires php 7.2)
+ 19. Project #1 - Section Introduction
+Section 4: Project #1 - Task List
+
+16/03/2024
+ 18. Installing Node.js on Mac (Required Later!)
+ 17. Installing and Running Docker (for MySQL etc.) on Mac
+ 16. Installing Composer on Mac
+ 15. Installing PHP 8.2 on Mac
+ 14. Installing the Homebrew Package Manager
+ 13. Setting up for Mac! - Section Introduction
+     #
+Section 3: Setting up for Mac!
+
+09/03/2024
+ 12. Installing Node.js on Windows (Required Later!)
+     # nvm list, nvm use 18.12.1
+ 11. Installing and Running Docker (for MySQL etc.) on Windows
+     # Docker Desktop WSL 2 backend: WSL 2 requires Hypervisor and SLAT (not present)
+     PS C:> ver or winver (to see the windows version)
+     # WSL 2 requires an update to its kernel component. Visit https://aka.ms/wsl2
+     # Run: wsl --set-version Ubuntu-20.04 2
+     # Upgrade version from WSL 1 to WSL 2: wsl --set-version <distro name> 2
+     # See "man sudo_root" for details. To get an interactive root shell, use sudo -i
+     # To run a command as administrator (user "root"), use "sudo <command>"
+     # Enter new UNIX username: mahbub, New password: Pass@123
+     # Install Ubuntu-20.04: wsl --install -d Ubuntu-20.04
+     # To check which version of wsl you are running: wsl -l -v
+     # And run: wsl --install -d <DistroName> to install a distro
+     # If wsl was already installed, run: wsl --list --online (wsl -l -o) to see a list of available distros
+     # From PowerShell (Admin) run: wsl --install
+     # Install Windows Subsystem for Linux (WSL) on Windows 10
+     # Install Docker without HyperV/VirtualBox/VMware support on Windows
+07/03/2024
+     PS C:> systeminfo (Hypervisor requires support for SLAT - Second Level Address Translation)
+     # Open Windows PowerShell (Admin) and run: bcdedit /set hypervisorlaunchtype auto
+     # Turn Windows features on: "Hyper-V", "Windows Hypervisor Platform" and "Windows Sandbox"
+06/03/2024
+     # https://docs.docker.com/desktop/troubleshoot/topics/#virtualization
+     # Docker Desktop - Windows Hypervisor is not present
+     # Get started with Docker by Downloading for Windows from https://www.docker.com/
+ 10. Installing Composer on Windows
+     PS C:> composer about
+     # Download the Windows installer: Composer-Setup.exe from https://getcomposer.org/
+  9. Enabling pdo_mysql Extension
+     # Enable extension=pdo_mysql in the php.ini file by uncommenting the line
+     PS C:> php -i | findstr "php.ini" (to find the path of php.ini file)
+  8. Installing PHP 8.2 on Windows
+     # Edit the system environment variables, and add C:\php-8.2.16 to the path
+     PS C:> php -v (to check the php version)
+     # Unzip the files and move them to C:\php-8.2.16
+     # Download PHP 8.2 from https://windows.php.net/ (Non Thread Safe, Zip file)
+  7. Setting up for Windows! - Section Introduction
+Section 2: Setting up for Windows!
+
+05/03/2024
+  6. Resourced and Links!
+  5. What is Laravel?
+  4. Visual Studio Code Recommendations
+     # VS Code Extensions: PHP (DevSense), PHP Namespace Resolver, Laravel Extra Intellisense
+  3. Source Code of The Course!
+     # https://github.com/piotr-jura-udemy/laravel-course-2023
+  2. How to Get Help?
+     # StackOverflow, ChatGPT, FadoCodeCamp, Discord community
+     # https://laravel.com/docs
+  1. Welcome to the Course!
+Section 1: Introduction to the Course
