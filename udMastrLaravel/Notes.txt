@@ -6,7 +6,7 @@ Master Laravel for Beginners & Intermediate 2024
      # 
 Section 5: Project #2 - Book Reviews
 
-26/03/2024
+27/03/2024
  43. Styling Flash Message & Using Alpine.js
  42. Styling Forms
  41. Styling the Task Page
@@ -16,11 +16,13 @@ Section 5: Project #2 - Book Reviews
  37. Reusing Blade Code - Subviews
  36. Deleting Data
  35. Reusability (Route Model Binding Form Requests, Mass Assignment)
-25/03/2024
+26/03/2024
  34. Keeping Old Values in the Form
  33. Edit Form
+     # 
  32. Sessions, Errors & Flash Messages
  31. Validating and Storing Data
+25/03/2024
  30. Forms and CSRF Protection
      # To prevent Cross Site Request Forgery, @csrf is added in blade forms
      PS C:> php artisan route:list
