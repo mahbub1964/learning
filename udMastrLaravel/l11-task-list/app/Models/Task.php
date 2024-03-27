@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
-    use HasFactory;
+  use HasFactory;
+
+  public function getRouteKeyName() {
+    return 'id'; //slug
+  }
 }

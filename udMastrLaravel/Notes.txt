@@ -1,12 +1,12 @@
 Master Laravel for Beginners & Intermediate 2024
  - Piotr Jura
-29/03/2024
+31/03/2024
      # 
-29/03/2024
+31/03/2024
      # 
 Section 5: Project #2 - Book Reviews
 
-27/03/2024
+28/03/2024
  43. Styling Flash Message & Using Alpine.js
  42. Styling Forms
  41. Styling the Task Page
@@ -14,12 +14,20 @@ Section 5: Project #2 - Book Reviews
  39. Toggling Task State
  38. Adding Pagination
  37. Reusing Blade Code - Subviews
+27/03/2024
  36. Deleting Data
  35. Reusability (Route Model Binding Form Requests, Mass Assignment)
-26/03/2024
+     # 
+     # and replace $requst->validate() calls with $request->validated();
+     # Replace Request with TaskRequest in Route functions
+     # Return the validation rules array from the rules function
+     # Modify the created TaskRequest.php in app/Http/Requests: authorize function return true;
+     PS C:> php artisan make:request TaskRequest
+     # Identical validation rules can be extracted and put into a Form Request
+     # Type hinted model binding, replace $id with Task $task
  34. Keeping Old Values in the Form
  33. Edit Form
-     # 
+26/03/2024
  32. Sessions, Errors & Flash Messages
  31. Validating and Storing Data
 25/03/2024
