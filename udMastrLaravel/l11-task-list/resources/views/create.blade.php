@@ -1,7 +1,7 @@
 <!-- Im a working create view! -->
 @extends('layouts.app')
 
-@section('title', 'Add Task')
+<!-- @section('title', 'Add Task')
 
 @section('styles')
 <style>
@@ -9,11 +9,11 @@
     color: red; font-size: 0.8rem;
   }
 </style>
-@endsection
+@endsection -->
 
 @section('content')
-  <!-- {{ $errors }} -->
-  <form method="POST" action="{{ route('tasks.store') }}">
+  @include('form')
+  <!-- <form method="POST" action="{{ route('tasks.store') }}">
     @csrf
     <div>
       <label for="title">Title</label>
@@ -39,5 +39,5 @@
     <div>
       <button type="submit">Add Task</button>
     </div>
-  </form>
+  </form> -->
 @endsection

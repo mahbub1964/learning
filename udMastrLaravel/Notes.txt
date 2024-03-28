@@ -6,18 +6,22 @@ Master Laravel for Beginners & Intermediate 2024
      # 
 Section 5: Project #2 - Book Reviews
 
-28/03/2024
+29/03/2024
  43. Styling Flash Message & Using Alpine.js
  42. Styling Forms
  41. Styling the Task Page
  40. Adding Styling with Tailwind CSS
+28/03/2024
  39. Toggling Task State
+     # 
  38. Adding Pagination
  37. Reusing Blade Code - Subviews
-27/03/2024
  36. Deleting Data
+27/03/2024
  35. Reusability (Route Model Binding Form Requests, Mass Assignment)
-     # 
+     # This can also be enabled by setting $guarded, which is dangerous
+     # To enable it, the protected $fillable property must be set in Models
+     # Mass asignment of attributes in Models is disabled by default
      # and replace $requst->validate() calls with $request->validated();
      # Replace Request with TaskRequest in Route functions
      # Return the validation rules array from the rules function
