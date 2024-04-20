@@ -1,6 +1,6 @@
 Master Laravel for Beginners & Intermediate 2024
  - Piotr Jura
-15/04/2024
+25/04/2024
      # 
 Section 12: OLD CONTENT: Creating the New Laravel Project
 Section 11: OLD CONTENT: Mac Specific Setup
@@ -10,14 +10,22 @@ Section 8: Project #5 - Job Board
 Section 7: Project #4 - Livewire Poll App
 Section 6: Project #3 - Events Management App (REST API)
 
+20/04/2024
  65. Rate Limiting
  64. Scoped Resource Controller - Adding a Review
  63. Blade Components - Star Rating Component
  62. Rating and Review Count on All Pages
- 61. Invalidating Cache
-08/04/2024
- 60. Cache and Caching Queries
      # 
+18/04/2024
+ 61. Invalidating Cache
+     > \App\Models\Review::where('id',1732)->update(['rating' => 2]);
+     > $review->update(['rating' => 1]);
+     > $review->save();
+     > $review->rating = 4;
+     > $review = \App\Models\Review::findOrFail(1732); 
+     PS C:> php artisan tinker
+ 60. Cache and Caching Queries
+08/04/2024
  59. One Book Page
      # Create view show.blade.php in resources\views\books
  58. Popular or Highest Rated - the Logic

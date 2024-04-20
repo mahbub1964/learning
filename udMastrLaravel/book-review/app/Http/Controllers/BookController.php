@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\Cache;
 
 class BookController extends Controller
 {
@@ -14,6 +15,7 @@ class BookController extends Controller
   {
     $title = $request->input('title');
     $filter = $request->input('filter', '');
+
     $books = Book::when($title, fn($query, $title) => $query->title($title));
     $books = match($filter) {
       'popular_last_month' => $books->popularLastMonth(),
@@ -22,7 +24,14 @@ class BookController extends Controller
       'highest_rated_last_6months' => $books->highestRatedLast6Months(),
       default => $books->latest()
     };
-    $books = $books->get();
+    // $books = $books->get();
+    // $books = Cache::remember('books', 3600, fn() => $books->get());
+    $cacheKey = 'books:' . $filter . ':' . $title;
+    // $books = cache()->remember($cacheKey, 3600, fn() => $books->get());
+    $books = cache()->remember($cacheKey, 3600, function () use($books) {
+      //dd('Not from cache!');
+      return $books->get();
+    });
     return view('books.index', ['books' => $books]);
   }
 
@@ -47,9 +56,12 @@ class BookController extends Controller
    */
   public function show(Book $book) //string $id
   {
-      return view('books.show', ['book' => $book->load([
-        'reviews' => fn($query) => $query->latest()
-      ])]);
+    //return view('books.show', ['book' => $book->load(['reviews' => fn($query) => $query->latest()])]);
+    $cacheKey = 'book:' . $book->id;
+    $book = cache()->remember($cacheKey, 3600, fn() => $book->load([
+      'reviews' => fn($query) => $query->latest()
+    ]));
+    return view('books.show', [ 'book' => $book ]);
   }
 
   /**

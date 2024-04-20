@@ -1,0 +1,111 @@
+PHP From Scratch 2024 | Beginner To Advanced
+ - Brad Traversy - Full Stack Web Developer & Instructor at Traversy Media
+20/06/2024
+     # 
+Section 16: Wrap Up
+Section 15: Project Deployment - Hostinger
+Section 14: Final Touches & Added Content
+Section 13: Authentication, Authorization & Sessions
+Section 12: Create, Update & Delete Listings
+Section 11: Namespaces, Controller Classes & Router Refactor
+Section 10: Database Class, Fetch & Display Listings
+Section 9: Workopia Project Start & Custom Routing
+Section 8: Database Integration & PDO
+Section 7: Superglobals
+
+04/06/2024
+ 55. Interfaces
+     # 
+ 54. Abstract Classes
+03/06/2024
+ 53. OOP Challenges
+25/05/2024
+ 52. Static Members & Methods
+ 51. Inheritence
+23/05/2024
+ 50. Access Modifiers, Getters & Setters
+22/05/2024
+ 49. Creating a Class
+     PS C:> php -S localhost:8000
+16/05/2024
+ 48. OOP Overview
+Section 6: Object Oriented Programming (OOP)
+
+ 47. More Function Challenges
+ 46. Format Salary Refactor Challenge
+ 45. Arrow Functions
+15/05/2024
+ 44. Callback Functions
+ 43. Anonymous Functions & Closures
+ 42. Average Salary Challenge
+ 41. Activity: Job Listings Helper Functions
+ 40. Optional Type Declarations
+     # https://www.php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration
+ 39. Constants
+14/05/2024
+ 38. Global & Local Scope
+ 37. Parameters & Arguments
+ 36. Functions & Return Values
+Section 5: Functions
+
+ 35. Names Challenge
+13/05/2024
+ 34. Null Coalescing Operator
+ 33. Ternary Operator
+ 32. Switch Statements
+ 31. FizzBuzz Challenge
+ 30. Activity: Dynamic Job Listings
+12/05/2024
+ 29. Conditionals In Loops - break & continue
+ 28. Comparison & Logical Operators
+ 27. Conditional HTML Output
+ 26. If Statements
+Section 4: Control Structures & Conditionals
+
+ 25. Array & Loop Challenges
+11/05/2024
+ 24. Multi-Dimensional Array Iteration
+ 23. Looping Through Arrays
+ 22. Nested Loops
+ 21. Basic Loops
+09/05/2024
+ 20. Array Challenges
+ 19. Multi-Dimensional Arrays
+ 18. Associative Arrays
+08/05/2024
+ 17. Array Functions
+ 16. Intro To Arrays
+Section 3: Arrays & Iteration
+
+ 15. Dates & Times
+     # https://www.php.net/manual/en/function.date.php
+     PS C:> php -S localhost:8000
+30/04/2024
+ 14. String Functions
+     # http://www.php.net/manual/en/ref.strings.php
+ 13. Arithmetic Operators & Functions
+ 12. Variables Challenge
+29/04/2024
+ 11. Type Casting & Juggling
+ 10. String Concatenation
+     PS C:> php -S localhost:8000
+22/04/2024
+  9. Data Types
+  8. Variables
+  7. PHP Tags, Printing & Comments
+Section 2: Data Types, Variables & Built-in Functions
+
+  6. PHP Sandbox Setup
+     PS C:> php -S localhost:8000
+     # Create a folder named php-sandbox in C:\laragon\www
+  5. Text Editor Setup
+     # VS Code Extensions: PHP Intelephense, PHP DocBlocker
+21/04/2024
+  4. Setup PHP - Windows
+     # Create a folder named test-project in C:\laragon\www and a file index.php
+     # Download Laragon - Full from https://laragon.org/
+  3. Setup PHP - MacOS
+  2. What Is PHP?
+     # php.net
+  1. Welcome To The Course
+Section 1: Introduction
