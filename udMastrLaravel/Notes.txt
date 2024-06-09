@@ -1,6 +1,6 @@
 Master Laravel for Beginners & Intermediate 2024
  - Piotr Jura
-25/04/2024
+30/09/2024
      # 
 Section 12: OLD CONTENT: Creating the New Laravel Project
 Section 11: OLD CONTENT: Mac Specific Setup
@@ -8,14 +8,122 @@ Section 10: OLD CONTENT: Windows Specific Setup
 Section 9: OLD CONTENT: Introduction and Recommendations
 Section 8: Project #5 - Job Board
 Section 7: Project #4 - Livewire Poll App
-Section 6: Project #3 - Events Management App (REST API)
 
-20/04/2024
+ 88. Throttling the API
+ 87. Reminding About Events - Queues
+ 86. Reminding About Events - Notifications and Email Sending
+ 85. Reminding About Events - Task Scheduling
+20/07/2024
+ 84. Reminding About Events - Custom Artisan Command
+ 83. Manual Authorization with Policies
+ 82. Authorization with Policies
+     # 
+10/07/2024
+ 81. Authorization with Gates
+     # Gates are defined within the boot method of the App\Providers\AppServiceProvider class
+09/07/2024
+ 80. Revoking Tokens and Signing Out
+     PS D:> php artisan sanctum:prune-expired
+     # Change 'expiration' setting to 60 * 24 (1 day) in config\sanctum.php file
+     # Revoke a specific token: $user->tokens()->where('id',$tokenId)->delete();
+     # Revoke current tokent: $request->user()->currentAccessToken()->delete();
+     # Revoke all tokens: $user->tokens()->delete();
+07/07/2024
+ 79. Automatically Adding Token in Postman Requests
+     const json = JSON.parse(responseBody); pm.environment.set('TOKEN',json.token);
+     # Add javascript code to the tests section of the Login requiest:
+06/07/2024
+ 78. Protecting Routes
+     # and use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+     # To solve "Call to undefined method middleware", base the Controller class to \Illuminate\Routing\Controller
+05/07/2024
+ 77. Setting Up Authentication Using Sanctum
+     # Add: use Illuminate\Support\Facades\Hash; in AuthController
+     PS D:> php artisan make:controller Api/AuthController
+     # Add: use Laravel\Sanctum\HasApiTokens; in User Model
+ 76. Loading Attendee Relations
+ 75. Universal Relation Loading Trait
+     # Create a folder named "Trait" in app/Http, and a file "CanLoadRelationships.php"
+04/07/2024
+ 74. Optional Relation Loading
+28/06/2024
+     PS D:> php artisan route:list
+     PS D:> php artisan migrate:refresh --seed
+     PS D:> php artisan migrate
+     # Modify .env: DB_CONNECTION=mysql, DB_DATABASE=event-management
+     # Download Laragon - Full from https://laragon.org/, and install in D:\laragon
+26/06/2024
+     D:event-management> composer install
+     D:event-management> php composer.phar install (Could not open input file: composer.phar)
+25/06/2024
+     D:learning> git checkout -b udPhpFmScratch --track origin/udPhpFmScratch
+     D:learning> git checkout --help
+     D:learning> git pull --rebase
+     D:learning> git branch --set-upstream-to=origin/udPhpFmScratch udPhpFmScratch
+     D:learning> git pull
+     D:learning> git pull origin udPhpFmScratch
+     D:learning> git checkout -b udPhpFmScratch
+13/06/2024
+ 73. Attendees and Pagination
+12/06/2024
+ 72. API Resources - Controlling JSON Response
+     PS C:> php artisan make:resource AttendeeResource
+     PS C:> php artisan make:resource UserResource
+     # Modify function toArray() in EventResource.php
+     # Check All Events in postman: events array is put in "data" attribute of the response object
+     PS C:> php artisan serve
+     # Modify index in EventController: enclose Event::all() inside EventResource::collection()
+     PS C:> php artisan make:resource EventResource
+ 71. Updating and Deleting Data
+ 70. Storing Data and Validation
+11/06/2024
+ 69. Postman REST Client Crash Course
+     PS C:> php artisan serve [http://127.0.0.1:8000]
+ 68. Sending Data for the REST API
+     PS C:> php artisan migrate:refresh --seed
+     PS C:> php artisan make:seeder AttendeeSeeder
+     PS C:> php artisan make:seeder EventSeeder
+     PS C:> php artisan make:factory EventFactory --model=Event
+10/06/2024
+ 67. Creating the REST API Project
+     # also middleware configuration is done in bootstrap\app.php, instead of app\Http\Kernel
+     # In L-11, api route is configured in bootstrap\app.php, instead of RouteServiceProvider
+     # Open app\Providers\RouteServiceProvider.php, and app\Http\Kernel.php (Laravel 10)
+     PS C:> php artisan vendor:publish --help
+     PS C:> php artisan route:list
+     # apiResource Route 'events.attendees' scoped ['attendee' => 'event']
+     # In routes\api.php, add apiResource Route 'events', and
+     PS C:> php artisan install:api
+     # In Attendee model, add relations user():BelongsTo and event():BelongsTo
+     # In Event model, add relations user():BelongsTo and attendees():HasMany
+     # and $table->foreignIdFor(Event::class); (User---Event, many-many)
+     # In attendees migration, add $table->foreignIdFor(User::class);
+     # In events migration, add $table->foreignIdFor(User::class); (User<--Event, one-to-many)
+     PS C:> php artisan make:controller Api/EventController --api
+     PS C:> php artisan make:controller Api/AttendeeController --api
+     C:> php artisan make:model Attendee -m (Migration)
+     C:> php artisan make:model Event -m
+     C:> php artisan migrate
+     # Modify .env: DB_CONNECTION=mysql, DB_DATABASE=event-management
+     C:> composer create-project --prefer-dist laravel/laravel event-management
+ 66. Project #3 - Section Introduction
+Section 6: Project #3 - Events Management App (REST API)
+-----------------------------------------------------------------------------------------------------
+
+31/12/2024
  65. Rate Limiting
  64. Scoped Resource Controller - Adding a Review
  63. Blade Components - Star Rating Component
  62. Rating and Review Count on All Pages
      # 
+09/06/2024
+     PS C:> php artisan clear-compiled (doesn't solve)
+     # To solve: There are no commands defined in the "install" namespace
+     # To enable API routing - PS C:> php artisan install:api
+     # Delete files: packages.php,services.php& config.php fm bootstrap/cache, php artisan cache:clear
+     PS C:> php artisan optimize:clear, composer update
+     PS C:> php artisan route:clear, php artisan config:clear, php artisan cache:clear, in sequence
+     # In order to solve UnexpectedValueException - There is no existing directory at /storage/logs
 18/04/2024
  61. Invalidating Cache
      > \App\Models\Review::where('id',1732)->update(['rating' => 2]);
