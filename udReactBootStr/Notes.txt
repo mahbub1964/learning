@@ -1,6 +1,6 @@
 Mega Web Dev Bootcamp with React Bootstrap5 Redux & REST API
  - Obify Consulting, Software Skill Development Company
-25/05/2023
+31/12/2024
 Section 8: Source Code
 Section 7: User Session, Dynamic Menu, Redux, Context API
 Section 6: Working on Signup, Login & Logout with API Integration
@@ -77,40 +77,25 @@ Section 3: Designing Footer, Home Page & Call to Action
      # Add routes with post("/api/register") and auth controller with a Register function
 Section 2: Designing Navbar, Aboutus, Contactus with Routing
 
-12/05/2023
+31/08/2024
+
   7. Integrating Bootstrap5 Google fonts and FontAwesome
-     # Uncomment "experimentalDecorators": true, "emitDecoratorMetadata": true,
-     # to enable the use of decorators in entities
-     # Create a User entity
+
   6. Understanding React Project Structure & Lifecycle
-     # Create ormconfig.json, copy from github.com/typeorm/typescript-express-example
-     # and modify (add "logging": false)
-     PS D:node-auth> npm i mysql2
-     PS D:node-auth> npm i -D @types/node
-     PS D:node-auth> npm i reflect-metadata
-     PS D:node-auth> npm i typeorm
+     # Clear the startup code from src/App.js and App.css
   5. Create React App Start Dev Server
-     # Create a new Schema named "node_auth"
-     # Open MySQL Workbench (root/Pass@123)
-
-11/05/2023
+     PS D:mypostapp> npm start
+     PS D:udReactBootStr> cd mypostapp
+     # npx create-react-app mypostapp .
   4. Installing NodeJS runtime
-     # Modify package.json: (1) Add "type": "module", and
-     # (2) change node to ts-node-esm in "start" script
-     PS D:node-auth> npm i -g ts-node
-     PS D:node-auth> npm i -D @types/express
-     PS D:node-auth> npm i express
   3. Install Visual Studio Code editor
-     PS D:node-auth> npm i -g typescript
-     # Rename src/index.js to index.ts
   2. Know Your Instructor & Get Help/Support
-     # Rename "scripts": "test" to "start" and modify to "node src/index.js"
-     PS D:node-auth> npm init
-
   1. Course Introduction
+     # Bootstrap 5, Google Fonts, FontAwesome (icons), Unsplash (images)
 Section 1: Introduction & Setup
 
-07/14/2024
+     # git checkout udReactBootStr
+14/07/2024
      # git remote set-url origin https://mahbub1964@github.com/mahbub1964/learning.git
      # Control Panel->User Accounts->Manage your credentials->Windows Credentials->Generic Credentials
      # In order to resolve Permission denied to GitHub repository: Remove GitHub credentials from:

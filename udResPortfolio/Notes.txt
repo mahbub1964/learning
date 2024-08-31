@@ -1,0 +1,120 @@
+The Ultimate ReactJs Responsive Portfolio Website
+ - Ehizeex Okwuose
+Build A Real World Responsive Portfolio Website With Email Functionality Using
+   Reactjs, Bootstrap, Rxjs and NodeJS.
+31/12/2024
+Section 12: Deployment
+Section 11: Backend (node Js)
+Section 10: Contact Me Component
+Section 9: Testimonial Component
+Section 8: Resume Component
+Section 7: About Me Component
+Section 6: ReUseAble Component
+Section 5: Header Component
+
+ 34. React Hooks useState and useEffect to call Posts API and store data on page 1
+ 33. Understanding REST API for Getting Post Data
+ 32. Designing All Posts Page
+ 31. Create All Post page and Link to NavBar navcigation
+
+ 30. Designing Call To Action section
+ 29. Add Home Link to the Nav Bar
+ 28. Designing Home Page Portfolio Section
+     PS D:auth-mongoose> cd react-js
+     PS D:auth-mongoose> npx create-react-app react-js
+ ##  Create a React App within the auth-mongoose folder
+
+ 27. Designing Home Page Latest Post Section
+ 26. Designing Home Page Featured Post Section
+     PS D:react-auth> npm i react-redux
+     PS D:react-auth> npm i @reduxjs/toolkit
+
+22/05/2023
+ 25. Designing Home Page Hero Section Slider
+ 24. Home Page Layout
+ 23. Designing Footer Contact Address - Paret 5
+ 22. Designing Footer Newsletter - Part 4
+ 21. Designing Footer Quick Links - Part 3
+     PS D:react-auth> npm i -D @types/axios
+     PS D:react-auth> npm i axios
+ 20. Designing Footer Section Heading - Part 2
+     PS D:react-auth> npm i -D @types/react-router-dom
+     # Click on the project selection downward arrow button to open "Select a project" dialog form
+ ##  Create a new GCP project "RS Comms Production"
+
+21/05/2023
+ 19. Designing Footer Section Layout - Part 1
+     # Copy Login.tsx to Register.tsx, change labels, add First/Last Names and Password Confirm
+     # Create "components" folder in src, a file "Login.tsx" and move codes from App.tsx
+
+ 18. Styling our Contact us Form with Bootstrap - part 2
+     # Select "Settings" and change the project name to "RS Comms Web App"
+     # Use the hamburger menu in the top left to switch to the "IAM & Admin" section
+ ##  Create a GCP account with rscommsbd@gmail.com
+
+     PS D:auth-mongoose> npm i express
+     PS D:auth-mongoose> npm init
+ ##  Start build a new project named auth_mongoose similar to node_auth
+Section 4: RxJs
+
+18/05/2023
+ 17. Component Rendering
+ 16. Clean up the code and maintain the app structure
+     PS D:node-auth> npm i -D @types/nodemailer
+     PS D:node-auth> npm i nodemailer
+ 15. Display The Footer
+ 14. Profile Footer
+
+21/09/2024
+ 13. Profile Responsiveness
+
+ 12. Styling Profile Component
+     # 
+     PS D:client> npm uninstall @types/react-typical 
+     PS D:client> npm uninstall react-typical
+     # Create folder Home & copy fonts (from Materials) in client\src\assets
+
+ 11. Display Profile Picture And Corrections
+20/09/2024
+ 10. React Type Effect Update
+     PS D:client> npm install react-simple-typewriter --legacy-peer-deps
+  9. Profile Component 2
+     PS D:client> npm install -D @types/react-typical --legacy-peer-deps
+     PS D:client> npm install react-typical --legacy-peer-deps
+     PS D:client> npm install react-typical (doesn't support React-18)
+19/09/2024
+  8. Profile Component 1
+     PS D:client> npm run dev
+     # Create files: Profile.js, Profile.css inside PortfolioContainer\Home
+  7. Setting Up project Structure
+     # Create folders: AboutMe, ContactMe, Home, Resume, Footer, Testimonial
+     # Create a folder: PortfolioContainer in client\src, and inside PortfolioContainer:
+     D: nvm use 20.16, nvm ls
+Section 3: Home Component
+
+02/09/2024
+  6. Gmail Functionality (Get App password)
+     # Open gmail, Manage your Google Account, Security, 2-Step Verification, App passwords
+  5. Image Update (img)
+Section 2: Course Update (Very important Update)
+
+01/09/2024
+  4. React Boiler Plate
+     # Delete files: public/vite.svg, src/assets/react.svg
+  3. Create React App
+     PS D:client> npm run dev
+     # nvm install 20.16, nvm use 20.16, nvm ls, and reinstall vite react client
+     PS D:client> npm install (Require Node v18.18)
+     PS D:portfoliopro> cd client
+     PS D:portfoliopro> npm create vite@latest, create-vite@5.5.2 (y), client, React, TypeScript
+     PS D:udResPortfolio> md portfoliopro, cd portfoliopro
+     # npx create-vite my-app --template react 
+     # npm create vite@latest my-app -- --template react
+     # npm create vite@latest my-app --template, React, TypeScript/JavaScript
+     # npm create vite@latest, Project name, Framework (React), Variant (TypeScript/JavaScript)
+     # react.dev, Learn React, Installation, How to start a new React project
+     # reactjs.org, docs, Create a New React App, npx create-react-app my-app
+  2. Course Review and How To Ask Questions
+  1. Demo Project
+     # edubaba.herokuapp.com
+Section 1: Introduction
