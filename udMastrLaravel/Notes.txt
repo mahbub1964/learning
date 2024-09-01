@@ -1,51 +1,106 @@
 Master Laravel for Beginners & Intermediate 2024
  - Piotr Jura
-30/09/2024
+30/11/2024
      # 
 Section 12: OLD CONTENT: Creating the New Laravel Project
 Section 11: OLD CONTENT: Mac Specific Setup
 Section 10: OLD CONTENT: Windows Specific Setup
 Section 9: OLD CONTENT: Introduction and Recommendations
 Section 8: Project #5 - Job Board
-Section 7: Project #4 - Livewire Poll App
+-----------------------------------------------------------------------------------------------------
 
- 88. Throttling the API
- 87. Reminding About Events - Queues
- 86. Reminding About Events - Notifications and Email Sending
- 85. Reminding About Events - Task Scheduling
+04/11/2024
+
+ 93. Voting in Polls!
+     # 
+
+03/11/2024
+ 92. Events - Communication Between Components
+30/10/2024
+ 91. Listing Polls Component
+     C:livewire-poll> php artisan serve
+     C:livewire-poll> php artisan make:livewire Polls
+ 90. Validation in Livewire
+28/10/2024
+ 89. Refactoring the Poll Storing Code
+26/10/2024
+ 88. Creating a Poll
+ 87. Editing Poll Options
+ 86. Actions in Livewire
+ 85. How Livewire Works?
+24/10/2024
+ 84. Your First Livewire Component
+     C:livewire-poll> php artisan serve
+     # Add @livewire('create-poll') in app.blade.php body
+     C:livewire-poll> php artisan make:livewire CreatePoll
+22/10/2024
+ 83. Creating Models and Migrations for the Poll App
+     C:livewire-poll> php artisan migrate
+     # Also remove the last record from the migrations table
+     # Manually delete tables: polls and votes from the database
+     # Rename options migration file, so that it is listed before votes
+     # Error, votes table migration failed because options didn't exist
+     C:livewire-poll> php artisan migrate
+     # In votes migration, create foreignIdFor(\App\Models\Option::class)->constrained()
+     # In options migration, create foreignIdFor(\App\Models\Poll::class)->constrained()
+     # In Vote model, create function option returning $this->belongsTo(Option::class)
+     # In Option model, create functions poll and votes
+     # In Poll model, create function options returning $this->hasMany(Option::class)
+     # Create one to many relations between Poll<-Option and Option<-Vote:
+     C:livewire-poll> php artisan make:model Option -m
+     C:livewire-poll> php artisan make:model Vote -m
+     C:livewire-poll> php artisan make:model Poll -m
+
+21/10/2024
+ 82. Creating the Project and Setting Up Livewire
+     C:livewire-poll> 
+     C:livewire-poll> php artisan serve
+     # Rename welcome.blade.php to app.blade.php in resources\views
+     C:livewire-poll> composer require livewire/livewire
+     C:> cd livewire-poll
+     C:> composer create-project --prefer-dist laravel/laravel livewire-poll
+ 81. Project #4 - Section Introduction 
+Section 6: Project #4 - Livewire Poll App
+-----------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
+
+ 83. Throttling the API
+ 82. Reminding About Events - Queues
+ 81. Reminding About Events - Notifications and Email Sending
+ 80. Reminding About Events - Task Scheduling
 20/07/2024
- 84. Reminding About Events - Custom Artisan Command
- 83. Manual Authorization with Policies
- 82. Authorization with Policies
+ 79. Reminding About Events - Custom Artisan Command
+ 78. Manual Authorization with Policies
+ 77. Authorization with Policies
      # 
 10/07/2024
- 81. Authorization with Gates
+ 76. Authorization with Gates
      # Gates are defined within the boot method of the App\Providers\AppServiceProvider class
 09/07/2024
- 80. Revoking Tokens and Signing Out
+ 75. Revoking Tokens and Signing Out
      PS D:> php artisan sanctum:prune-expired
      # Change 'expiration' setting to 60 * 24 (1 day) in config\sanctum.php file
      # Revoke a specific token: $user->tokens()->where('id',$tokenId)->delete();
      # Revoke current tokent: $request->user()->currentAccessToken()->delete();
      # Revoke all tokens: $user->tokens()->delete();
 07/07/2024
- 79. Automatically Adding Token in Postman Requests
+ 74. Automatically Adding Token in Postman Requests
      const json = JSON.parse(responseBody); pm.environment.set('TOKEN',json.token);
      # Add javascript code to the tests section of the Login requiest:
 06/07/2024
- 78. Protecting Routes
+ 73. Protecting Routes
      # and use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
      # To solve "Call to undefined method middleware", base the Controller class to \Illuminate\Routing\Controller
 05/07/2024
- 77. Setting Up Authentication Using Sanctum
+ 72. Setting Up Authentication Using Sanctum
      # Add: use Illuminate\Support\Facades\Hash; in AuthController
      PS D:> php artisan make:controller Api/AuthController
      # Add: use Laravel\Sanctum\HasApiTokens; in User Model
- 76. Loading Attendee Relations
- 75. Universal Relation Loading Trait
+ 71. Loading Attendee Relations
+ 70. Universal Relation Loading Trait
      # Create a folder named "Trait" in app/Http, and a file "CanLoadRelationships.php"
 04/07/2024
- 74. Optional Relation Loading
+ 69. Optional Relation Loading
 28/06/2024
      PS D:> php artisan route:list
      PS D:> php artisan migrate:refresh --seed
@@ -64,9 +119,9 @@ Section 7: Project #4 - Livewire Poll App
      D:learning> git pull origin udPhpFmScratch
      D:learning> git checkout -b udPhpFmScratch
 13/06/2024
- 73. Attendees and Pagination
+ 68. Attendees and Pagination
 12/06/2024
- 72. API Resources - Controlling JSON Response
+ 67. API Resources - Controlling JSON Response
      PS C:> php artisan make:resource AttendeeResource
      PS C:> php artisan make:resource UserResource
      # Modify function toArray() in EventResource.php
@@ -74,18 +129,18 @@ Section 7: Project #4 - Livewire Poll App
      PS C:> php artisan serve
      # Modify index in EventController: enclose Event::all() inside EventResource::collection()
      PS C:> php artisan make:resource EventResource
- 71. Updating and Deleting Data
- 70. Storing Data and Validation
+ 66. Updating and Deleting Data
+ 65. Storing Data and Validation
 11/06/2024
- 69. Postman REST Client Crash Course
+ 64. Postman REST Client Crash Course
      PS C:> php artisan serve [http://127.0.0.1:8000]
- 68. Sending Data for the REST API
+ 63. Sending Data for the REST API
      PS C:> php artisan migrate:refresh --seed
      PS C:> php artisan make:seeder AttendeeSeeder
      PS C:> php artisan make:seeder EventSeeder
      PS C:> php artisan make:factory EventFactory --model=Event
 10/06/2024
- 67. Creating the REST API Project
+ 62. Creating the REST API Project
      # also middleware configuration is done in bootstrap\app.php, instead of app\Http\Kernel
      # In L-11, api route is configured in bootstrap\app.php, instead of RouteServiceProvider
      # Open app\Providers\RouteServiceProvider.php, and app\Http\Kernel.php (Laravel 10)
@@ -106,8 +161,9 @@ Section 7: Project #4 - Livewire Poll App
      C:> php artisan migrate
      # Modify .env: DB_CONNECTION=mysql, DB_DATABASE=event-management
      C:> composer create-project --prefer-dist laravel/laravel event-management
- 66. Project #3 - Section Introduction
+ 61. Project #3 - Section Introduction
 Section 6: Project #3 - Events Management App (REST API)
+-----------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------
 
 31/12/2024
@@ -230,6 +286,7 @@ Section 6: Project #3 - Events Management App (REST API)
      PS C:> composer create-project --prefer-dist laravel/laravel book-review
  44. Project #2 - Section Introduction
 Section 5: Project #2 - Book Reviews
+-----------------------------------------------------------------------------------------------------
 
  43. Styling Flash Message & Using Alpine.js
      # https://alpinejs.dev/ - Alpine.js
@@ -328,6 +385,7 @@ Section 5: Project #2 - Book Reviews
      PS C:> composer create-project laravel/laravel:^10 l10-task-list (requires php 7.2)
  19. Project #1 - Section Introduction
 Section 4: Project #1 - Task List
+-----------------------------------------------------------------------------------------------------
 
 16/03/2024
  18. Installing Node.js on Mac (Required Later!)
