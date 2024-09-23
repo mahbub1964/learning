@@ -57,7 +57,7 @@ Section 5: Header Component
  ##  Start build a new project named auth_mongoose similar to node_auth
 Section 4: RxJs
 
-22/09/2024
+23/09/2024
  17. Component Rendering
  16. Clean up the code and maintain the app structure
      PS D:node-auth> npm i -D @types/nodemailer
