@@ -57,19 +57,21 @@ Section 5: Header Component
  ##  Start build a new project named auth_mongoose similar to node_auth
 Section 4: RxJs
 
-23/09/2024
+29/09/2024
  17. Component Rendering
  16. Clean up the code and maintain the app structure
      PS D:node-auth> npm i -D @types/nodemailer
      PS D:node-auth> npm i nodemailer
  15. Display The Footer
+
  14. Profile Footer
+     
+     # Create folder Footer in src\portfolioContainer\Home, and files Footer.js & css
 
+23/09/2024
  13. Profile Responsiveness
-
 21/09/2024
  12. Styling Profile Component
-     # 
      PS D:client> npm uninstall @types/react-typical 
      PS D:client> npm uninstall react-typical
      # Create folder Home & copy fonts (from Materials) in client\src\assets
