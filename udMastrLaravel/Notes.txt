@@ -7,7 +7,25 @@ Section 11: OLD CONTENT: Mac Specific Setup
 Section 10: OLD CONTENT: Windows Specific Setup
 Section 9: OLD CONTENT: Introduction and Recommendations
 Section 8: Project #5 - Job Board
-Section 7: Project #4 - Livewire Poll App
+
+20/10/2024
+ 93. Voting in Polls!
+ 92. Events - Communication Between Components
+ 91. Listing Polls Component
+ 90. Validation in Livewire
+ 89. Refactoring the Poll Storing Code
+ 88. Creating a Poll
+ 87. Editing Poll Options
+ 86. Actions in Livewire
+ 85. How Livewire Works?
+ 84. Your First Livewire Component
+ 83. Creating Models and Migrations for the Poll App
+
+ 82. Creating the Project and Setting Up Livewire
+     # 
+ 81. Project #4 - Section Introduction 
+Section 6: Project #4 - Livewire Poll App
+-----------------------------------------------------------------------------------------------------
 
  83. Throttling the API
  82. Reminding About Events - Queues
