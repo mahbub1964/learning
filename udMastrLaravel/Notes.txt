@@ -1,6 +1,6 @@
 Master Laravel for Beginners & Intermediate 2024
  - Piotr Jura
-30/09/2024
+30/11/2024
      # 
 Section 12: OLD CONTENT: Creating the New Laravel Project
 Section 11: OLD CONTENT: Mac Specific Setup
@@ -8,7 +8,7 @@ Section 10: OLD CONTENT: Windows Specific Setup
 Section 9: OLD CONTENT: Introduction and Recommendations
 Section 8: Project #5 - Job Board
 
-20/10/2024
+31/10/2024
  93. Voting in Polls!
  92. Events - Communication Between Components
  91. Listing Polls Component
@@ -18,11 +18,20 @@ Section 8: Project #5 - Job Board
  87. Editing Poll Options
  86. Actions in Livewire
  85. How Livewire Works?
+22/10/2024
  84. Your First Livewire Component
- 83. Creating Models and Migrations for the Poll App
 
- 82. Creating the Project and Setting Up Livewire
+ 83. Creating Models and Migrations for the Poll App
      # 
+
+21/10/2024
+ 82. Creating the Project and Setting Up Livewire
+     C:livewire-poll> 
+     C:livewire-poll> php artisan serve
+     # Rename welcome.blade.php to app.blade.php in resources\views
+     C:livewire-poll> composer require livewire/livewire
+     C:> cd livewire-poll
+     C:> composer create-project --prefer-dist laravel/laravel livewire-poll
  81. Project #4 - Section Introduction 
 Section 6: Project #4 - Livewire Poll App
 -----------------------------------------------------------------------------------------------------
