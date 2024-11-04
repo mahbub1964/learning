@@ -6,35 +6,41 @@ Section 12: OLD CONTENT: Creating the New Laravel Project
 Section 11: OLD CONTENT: Mac Specific Setup
 Section 10: OLD CONTENT: Windows Specific Setup
 Section 9: OLD CONTENT: Introduction and Recommendations
+-----------------------------------------------------------------------------------------------------
+04/11/2024
+
 Section 8: Project #5 - Job Board
+101. Setting Up Tailwind CSS using Vite (and Node)
+100. Adding Laravel Debugbar 
+ 99. Creating the Job Board Project and Job Model
+ 98. UPGRADE to LARAVEL 11 - IMPORTANT!
+ 97. Project #5 - Section Introduction
+-----------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------
 
 04/11/2024
-
- 93. Voting in Polls!
-     # 
-
+ 96. Voting in Polls!
 03/11/2024
- 92. Events - Communication Between Components
+ 95. Events - Communication Between Components
 30/10/2024
- 91. Listing Polls Component
+ 94. Listing Polls Component
      C:livewire-poll> php artisan serve
      C:livewire-poll> php artisan make:livewire Polls
- 90. Validation in Livewire
+ 93. Validation in Livewire
 28/10/2024
- 89. Refactoring the Poll Storing Code
+ 92. Refactoring the Poll Storing Code
 26/10/2024
- 88. Creating a Poll
- 87. Editing Poll Options
- 86. Actions in Livewire
- 85. How Livewire Works?
+ 91. Creating a Poll
+ 90. Editing Poll Options
+ 89. Actions in Livewire
+ 88. How Livewire Works?
 24/10/2024
- 84. Your First Livewire Component
+ 87. Your First Livewire Component
      C:livewire-poll> php artisan serve
      # Add @livewire('create-poll') in app.blade.php body
      C:livewire-poll> php artisan make:livewire CreatePoll
 22/10/2024
- 83. Creating Models and Migrations for the Poll App
+ 86. Creating Models and Migrations for the Poll App
      C:livewire-poll> php artisan migrate
      # Also remove the last record from the migrations table
      # Manually delete tables: polls and votes from the database
@@ -52,14 +58,14 @@ Section 8: Project #5 - Job Board
      C:livewire-poll> php artisan make:model Poll -m
 
 21/10/2024
- 82. Creating the Project and Setting Up Livewire
+ 85. Creating the Project and Setting Up Livewire
      C:livewire-poll> 
      C:livewire-poll> php artisan serve
      # Rename welcome.blade.php to app.blade.php in resources\views
      C:livewire-poll> composer require livewire/livewire
      C:> cd livewire-poll
      C:> composer create-project --prefer-dist laravel/laravel livewire-poll
- 81. Project #4 - Section Introduction 
+ 83. Project #4 - Section Introduction 
 Section 6: Project #4 - Livewire Poll App
 -----------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------

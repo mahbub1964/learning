@@ -2,17 +2,23 @@
 
 namespace App\Livewire;
 
+use App\Models\Option;
 use Livewire\Component;
 
 class Polls extends Component
 {
-    protected $listeners = [
-      'pollCreated' => 'render'
-    ];
+  protected $listeners = [
+    'pollCreated' => 'render'
+  ];
 
-    public function render()
-    {
-      $polls = \App\Models\Poll::with('options.votes')->latest()->get();
-      return view('livewire.polls', ['polls' => $polls]);
-    }
+  public function render()
+  {
+    $polls = \App\Models\Poll::with('options.votes')->latest()->get();
+    return view('livewire.polls', ['polls' => $polls]);
+  }
+
+  public function vote(Option $option) { //$optionId
+    //$option = \App\Models\Option::findOrFail($optionId); //dd($option);
+    $option->votes()->create(); //dd($vote); //$vote = 
+  }
 }
