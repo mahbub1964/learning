@@ -1,0 +1,42 @@
+Laravel - Build an Advanced Job Portal Website (2024)
+Develop a Robust Job Portal Website Using Laravel 10, with Comprehensive
+Step-by-step Instructions - 
+
+31/12/2024
+
+Section 5: Front End
+
+ 26. Source Codes
+ 25. Current Item Selection in Sidebar
+ 24. Edit Profile
+ 23. Forget & Reset Password
+ 22. Login & Dashboard
+Section 4: Admin Panel Setup and Mastering
+
+ 21. 17_Multi Auth - 
+ 20. 16_Multi Auth - 
+ 19. 15_Multi Auth - 
+ 18. 14_Multi Auth - 
+ 17. 13_Multi Auth - 
+ 16. 12_Multi Auth - Working With Admin Authentication (Part -2)
+ 15. 11_Multi Auth - Working With Admin Authentication (Part -1)
+ 14. 10_Multi Auth - Creating Separate Route File And Controllers
+ 13. 9_Multi Auth - Creating Separate Model and Guard Admin
+ 12. 8_Multi Auth - Working With Company and Candidate Authentication (Part -5)
+ 11. 7_Multi Auth - Working With Company and Candidate Authentication (Part -4)
+ 10. 6_Multi Auth - Working With Company and Candidate Authentication (Part -3)
+  9. 5_Multi Auth - Working With Company and Candidate Authentication (Part -2)
+  8. 4_Multi Auth - Working With Company and Candidate Authentication (Part -1)
+  7. 3_Multi Auth - Basic Planning Before Setup Multi Auth
+  6. 2_Project Setup - Installing IDE Helper Package in Project
+  5. 1_Project Setup - Setting Up a Fresh Laravel Project With Breeze
+Section 3: Project Setup and Multi Auth Setup
+
+  4. 3_Environment Setup - Setting up Environment Path in Vs Code (Part -2)
+  3. 2_Environment Setup - Setting up Environment Path in Vs Code (Part -1)
+  2. 1_Environment Setup - Installing Necessary Apps and Extensions
+Section 2: Environment Setup for Project
+
+     # 
+  1. Introduction
+Section 1: Introduction

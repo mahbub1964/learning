@@ -1,0 +1,42 @@
+Laravel 11 - Making a Complete Travel Agency Website (2024)
+Learning the development of a complete dynamic travel agency management website 
+with Laravel 11 - Morshedul Arefin, Web Developer and Programming Instructor
+
+05/10/2024
+
+Section 5: Front End
+
+ 26. Source Codes
+ 25. Current Item Selection in Sidebar
+ 24. Edit Profile
+ 23. Forget & Reset Password
+ 22. Login & Dashboard
+ 21. Adding Demo Data Using Seeder
+ 20. Template Mastering
+ 19. HTML Template
+Section 4: Admin Panel Setup
+
+ 18. Source Codes
+ 17. Creating Middlewares & Register
+ 16. Guard Setup
+ 15. Admin & User Models
+ 14. Admin & User Migration Files
+ 13. Install Laravel 11
+Section 3: Multi Authentication using Multi Guard and Multi Table (for Admin and User)
+
+ 12. Code Editors
+ 11. Download & Install Composer (MAC OS)
+ 10. Download & Install Composer (Windows OS)
+  9. Shift between php versions in MAMP (MAC OS)
+  8. Installing MAMP (MAC OS)
+  7. Installing XAMPP (MAC OS)
+  6. Install PHP 8.2 in Laragon (Windows OS)
+  5. Shift between php versions in Laragon (Windows OS)
+  4. Installing Laragon (Windows OS)
+  3. Shift between php versions in XAMPP (Windows OS)
+  2. Installing XAMPP (Windows OS)
+Section 2: Local Server Setup & Preparing Environment
+
+     # 
+  1. Introduction
+Section 1: Introduction
